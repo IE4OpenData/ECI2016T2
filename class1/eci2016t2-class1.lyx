@@ -1,0 +1,9226 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usepackage{listings}
+\usetheme{Malmoe}
+\usecolortheme{wolverine}
+% or ...
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Copyright 2016 by Pablo Duboue <pablo.duboue@gmail.com>.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+All content otherwise stated is licensed under CC-BY-SA.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Hybrid Information Extraction Systems
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ECI2016T2 Class 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+Class 1: Introduction
+\end_layout
+
+\begin_layout Author
+Pablo Ariel Duboue, PhD
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+© 2016 Pablo Duboue - licensed under CC-BY-SA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+30va Escuela de Ciencias Informaticas (ECI)
+\begin_inset Newline newline
+\end_inset
+
+Facultad de Cs.
+ Exactas y Naturales UBA
+\end_layout
+
+\begin_layout Section
+Introduction to IE
+\end_layout
+
+\begin_layout Subsection
+What is IE?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+15 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What is Information Extraction?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Information Extraction (IE): Natural Language Processing (NLP) right now
+\end_layout
+
+\begin_layout Itemize
+A series of techniques to extract unstructured information from text into
+ structured data.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Very limited semantic content
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Full Semantic Analysis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+“The young boy quickly threw a green rubber ball at a big fast car.”
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename diogenes.png
+	width 11cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size scriptsize
+From 
+\begin_inset Quotes eld
+\end_inset
+
+Seleccion Lexica en Traduccion Automatica
+\begin_inset Quotes erd
+\end_inset
+
+ (Duboue, to appear) adapted from Nirenburg and Nirenburg (1998).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Motivating example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paper-292
+\end_layout
+
+\end_inset
+
+Imran, Muhammad, et al.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "\"Practical extraction of disaster-relevant information from social media.\""
+target "https://www2013.org/companion/p1021.pdf"
+
+\end_inset
+
+ Proceedings of the 22nd International Conference on World Wide Web.
+ ACM, 2013.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+4-page paper describing a very circumscribed IE system over Twitter using
+ only ML
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Tornado hits town of Joplin, 2011 (206.7k tweets)
+\end_layout
+
+\begin_layout Itemize
+Hurricane Sandy 2012 (140k tweets)
+\end_layout
+
+\begin_layout Itemize
+Find informative tweets and extract information depending on the class:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Caution and Advice
+\end_layout
+
+\begin_layout Enumerate
+Casualties and Damage
+\end_layout
+
+\begin_layout Enumerate
+Donations of money, goods or services
+\end_layout
+
+\begin_layout Enumerate
+People missing, found, or seen
+\end_layout
+
+\begin_layout Enumerate
+Information Sources
+\end_layout
+
+\begin_layout Enumerate
+Other
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Irman et al.
+ (2013) example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+People class, missing or lost people
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+
+\size footnotesize
+rt @911buff: public help needed: 
+\series bold
+2 boys 2 & 4 missing 
+\series default
+nearly 24 hours after they got separated from their mom when car submerged
+ in si.
+ #sandy #911buff
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Casualties and damage: Infrastructure 
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+
+\size footnotesize
+RT @TIME: NYC building had numerous construction complaints before 
+\series bold
+crane collapse 
+\series default
+http://t.co/7EDmKOp3 #Sandy
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Casualties and damage: Injured or dead
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+
+\size footnotesize
+At least 
+\series bold
+39
+\series default
+ dead millions without power in Sandy’s after- math.
+ http://t.co/Wdvz8KK8
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Irman et al.
+ (2013) example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Donations: Requests money/goods/services
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+
+\series bold
+\size footnotesize
+400 Volunteers are needed 
+\series default
+for areas that #Sandy destroyed.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Donations: Offers money/goods/services
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+
+\size footnotesize
+I want to volunteer to 
+\series bold
+help the hurricane Sandy victims
+\series default
+.
+ If anyone knows how I can get involved please let me know! 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Imran et al.
+ (2013) techniques
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two steps:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Cascade of Naive Bayes classifiers: personal / informative (direct, indirect)
+ / unrelated-to-disaster
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Uses Naive Bayes classifier from Weka.
+ 2000 / 4400 annotated tweets using annotators.
+\end_layout
+
+\begin_layout Itemize
+We will discuss classifiers tomorrow (class 2)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+CRFs for IE (class 4)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Uses sequence labeling implemented with Conditional Random Fields (CRFs)
+\end_layout
+
+\begin_layout Itemize
+We will discuss them on Thursday (class 4)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Annotation using an on-line provider
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Simple instructions
+\end_layout
+
+\begin_layout Itemize
+Cut&Paste interface
+\end_layout
+
+\begin_layout Itemize
+We will discuss annotations on Friday (class 5)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Imran et al.
+ (2013) metrics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Imran et al.
+ (2013) example:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Annotated
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+System Output
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(a)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+There were 
+\series bold
+12
+\series default
+ injured
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+<NIL>
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(b)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A 
+\series bold
+bridge has collapsed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bridge
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(c)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+10 volunteers
+\series default
+ needed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+needed
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Detection rate (
+\begin_inset Quotes eld
+\end_inset
+
+there's data in the Tweet
+\begin_inset Quotes erd
+\end_inset
+
+: 66% {b,c} over {a,b,c}) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+binary document recall over slots
+\end_layout
+
+\begin_layout Itemize
+very unusual but useful for their task
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hit ratio (
+\begin_inset Quotes eld
+\end_inset
+
+some of the extracted data is good
+\begin_inset Quotes erd
+\end_inset
+
+: 50% {b} over {b,c}) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+precision using overlap matching
+\end_layout
+
+\begin_layout Itemize
+usual metric, although overlap match is tolerated by few tasks
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Imran et al.
+ (2013) results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Joplin: 78% / 90%
+\end_layout
+
+\begin_layout Itemize
+Sandy: 41% / 79%
+\end_layout
+
+\begin_layout Itemize
+But, train on all Joplin then test on Sandy: 
+\series bold
+11%
+\series default
+ / 78% 
+\shape italic
+(does not generalize)
+\end_layout
+
+\begin_layout Itemize
+Train on Joplin + 10% Sandy, test on remainder Sandy: 21% / 81% 
+\shape italic
+(transfer learning)
+\end_layout
+
+\begin_layout Itemize
+How to further improve?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Incorporate domain heuristics using rules
+\end_layout
+
+\begin_layout Itemize
+We will discuss IE rules tomorrow and Wednesday (classes 2 and 3)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hybrid IE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+You will encounter plenty of research on doing IE using only ML
+\end_layout
+
+\begin_layout Itemize
+This makes sense on a research level
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Solving a problem by programming does not get a paper published
+\end_layout
+
+\begin_layout Itemize
+Unless you are publishing to the community that had that problem (i.e., biology
+ if doing IE on biology texts)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+However:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quality annotations are also expensive
+\end_layout
+
+\begin_layout Itemize
+Combining rules and machine learning is more an art than a science
+\end_layout
+
+\begin_layout Itemize
+It is hard to build intuitions on the topic
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hybrid IE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+You will encounter plenty of research on doing IE using only ML
+\end_layout
+
+\begin_layout Itemize
+This makes sense on a research level
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Solving a problem by programming does not get a paper published
+\end_layout
+
+\begin_layout Itemize
+Unless you are publishing to the community that had that problem (i.e., biology
+ if doing IE on biology texts)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+However:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quality annotations are also expensive
+\end_layout
+
+\begin_layout Itemize
+Combining rules and machine learning is more an art than a science
+\end_layout
+
+\begin_layout Itemize
+It is hard to build intuitions on the topic
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The First Step Goes The Longer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+IE as many other tasks in NLP is fast to get to a certain performance
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Further improvement requires an amount of effort multiple times the original
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+And for much less absolute performance
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+On Friday (class 5) we will discuss an adaptation task that took:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3hs to produced a system 79%
+\end_layout
+
+\begin_layout Itemize
++9hs (total 12hs) to take it to 80%
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The First Step Goes The Longer (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename watson_curves.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size scriptsize
+From Ferrucci et al.
+ (2012).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Applications of IE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Traditional applications:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Question Answering (QA)
+\end_layout
+
+\begin_layout Itemize
+Information Retrieval (IR)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CiteSeer
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Report Generation
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Applications of IE (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\shape italic
+Incorporating unstructured sources into statistical models
+\end_layout
+
+\begin_layout Itemize
+Automatic inferencing
+\end_layout
+
+\begin_layout Itemize
+From Text Mining, Weiss et al.
+ (2005) Chapter 6: Information Extraction
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Criminal justice (drug networks)
+\end_layout
+
+\begin_layout Itemize
+Intelligence (Non-Obvious Relationship Awareness)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Automated decision systems
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+Not all errors are the same depending on the application
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Specificity and Complexity Performance Tradeoff
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-255-fig1.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+Figure 1 of Cunningham, H (2006)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Metrics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Measuring how many times a system outputs the right answer (
+\begin_inset Quotes eld
+\end_inset
+
+accuracy
+\begin_inset Quotes erd
+\end_inset
+
+) is not enough
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Many interesting problems are very biased towards a background class
+\end_layout
+
+\begin_layout Itemize
+If 95% of the time something doesn't happen, saying it'll never happen (not
+ a very useful classifier!) will make you only 5% wrong
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Metrics:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+{\displaystyle precision}=\dfrac{\left|{\displaystyle correctly}\;tagged\right|}{\left|tagged\right|}=\dfrac{tp}{tp+fp}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+{\displaystyle recall}=\dfrac{\left|{\displaystyle correctly}\;tagged\right|}{\left|{\displaystyle should\;be\;tagged}\right|}=\dfrac{tp}{tp+fn}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+{\displaystyle F}=2\cdot\dfrac{P\cdot R}{P+R}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Precision / Recall Trade-off
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If you never answer anything, you are being very precise
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+100% precision, not very useful
+\end_layout
+
+\begin_layout Itemize
+But what about returning one output out of 10, but all correct?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+Building a KB with correct information
+\end_layout
+
+\begin_layout Itemize
+If you return every subsequence of characters, you are returning all valid
+ answers
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+But what about returning 9 out of 10, without missing any correct?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+Pre-filtering the input
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Matching Outputs to Human Annotations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Another issue with evaluation, what to do with partial outputs?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+The contract was awarded to [Acme] Inc.
+
+\emph default
+ 
+\end_layout
+
+\begin_layout Itemize
+vs
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+The contract was awarded to [Acme Inc.]
+\end_layout
+
+\begin_layout Itemize
+What about 
+\emph on
+
+\begin_inset Quotes eld
+\end_inset
+
+The contract was awarded to [International Business] Machines
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+And outputs with spurious material?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+The contract was awarded [to Acme Inc.]
+\end_layout
+
+\begin_layout Itemize
+But then 
+\emph on
+
+\begin_inset Quotes eld
+\end_inset
+
+The contract was award to [Acme Associates a limitied partnership from Ottawa]
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Again, this is application dependent
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+About Pablo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Universidad Nacional de Cordoba - FaMAF 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trabajo Final de Licenciatura: 
+\begin_inset Quotes eld
+\end_inset
+
+Desarrollo de un Parser Funcional para el Lenguaje Castellano
+\begin_inset Quotes erd
+\end_inset
+
+, 1998
+\end_layout
+
+\begin_layout Itemize
+ECI 1995 - Dr.
+ Juan Garay 
+\begin_inset Quotes eld
+\end_inset
+
+Adversarios y Computacion
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Columbia University 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Doctoral Dissertation: 
+\begin_inset Quotes eld
+\end_inset
+
+Indirect Supervised Learning of Strategic Generation Logic
+\begin_inset Quotes erd
+\end_inset
+
+, defended Jan.
+ 2005.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+IBM Research Watson
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Deep QA - Watson - Jeopardy! Show
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In Montreal from 2010-2016
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two semesters teaching at Cordoba University (NLG / ML on large datasets)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+On a personal sabbatical in NY now
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IE and me
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Started my PhD back in 1999 working on GeneWays
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A multidisciplinary IE pipeline for genomics
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Did my PhD in Natural Language Generation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Intelligence domain (IE from news)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+At IBM: Enterprise Search competition (2006)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Expert search (expert detection and linking)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+After IBM worked on two IE projects
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Real Estate contracts in French
+\end_layout
+
+\begin_layout Itemize
+Technical support from Web pages
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+GeneWays: biology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First year of PhD
+\end_layout
+
+\begin_layout Itemize
+Same term used to refer to gene / protein /mRNA
+\end_layout
+
+\begin_layout Itemize
+So ambiguous human authors disambiguate it themselves in some cases
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Use those cases to train a classifier
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conference paper (my most cited one, 234 citations)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+“Disambiguating Proteins, Genes, and RNA in Text: A Machine Learning Approach”
+\begin_inset Newline newline
+\end_inset
+
+Hatzivassiloglou, Duboue and Rzhetsky
+\begin_inset Newline newline
+\end_inset
+
+Proceedings of the 9th International Conference on Intelligent Systems for
+ Molecular Biology.
+ 2001
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Journal (my most cited one, 270 citations)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GeneWays: a system for extracting, analyzing, visualizing, and integrating
+ molecular pathway data
+\begin_inset Newline newline
+\end_inset
+
+Andrey Rzhetsky et al.
+ (12 authors)
+\begin_inset Newline newline
+\end_inset
+
+Journal of Biomedical Informatics Vol.
+ 37 (1) 2004
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ProGenIE: intelligence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Profile Generation by Information Extraction
+\end_layout
+
+\begin_layout Itemize
+Wrote general purpose extractors using GATE and JAPE
+\end_layout
+
+\begin_layout Itemize
+Assemble information about a person from news articles, then build a biography
+\end_layout
+
+\begin_layout Itemize
+Focus was on the generation bit, IE aspect was proof of concept
+\end_layout
+
+\begin_layout Itemize
+Financed by the AQuAinT program
+\end_layout
+
+\begin_layout Itemize
+Conference paper
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+“ProGenIE: Biographical descriptions for Intelligence Analysis”
+\begin_inset Newline newline
+\end_inset
+
+Duboue, McKeown, and Hatzivassiloglou.
+\begin_inset Newline newline
+\end_inset
+
+Proceedings of the NSF/NIJ Symposium on Intelligence and Security Informatics.
+ Lecture Notes in Computer Science 2003
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IBM: Expert Search
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+TREC Enterprise Search competition (2006)
+\end_layout
+
+\begin_layout Itemize
+IBM Team
+\end_layout
+
+\begin_layout Itemize
+Collect contexts around the names of experts to gaugue their expertise on
+ a topic
+\end_layout
+
+\begin_layout Itemize
+Use the same contexts to disambiguate occurrences (entity detection and
+ linking)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Real Estate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+At a Montreal consulting firm specialized in IE
+\end_layout
+
+\begin_layout Itemize
+Real estate contracts OCR'ed
+\end_layout
+
+\begin_layout Itemize
+High performance, high availability pipeline
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Technical Support
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+At a Montreal company specialized in technology for Tech Support centers
+\end_layout
+
+\begin_layout Itemize
+Identify pages with tech support content
+\end_layout
+
+\begin_layout Itemize
+Extract devices, versions, problems and solutions
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+IE Competitions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+20 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IE Competitions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Best way to gauge which ideas work and which ideas doesn't is to agree upon
+ a task (including a dataset) and compare results
+\end_layout
+
+\begin_layout Itemize
+Necessary when not all errors contribute the same and the systems are built
+ based on heuristics
+\end_layout
+
+\begin_layout Itemize
+Pioneered by IE since the late 80s 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paper-260
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+MUC 80s-90s, navy, single document 
+\end_layout
+
+\begin_layout Description
+ACE 2000s, multilingual, focus on the entities rather than documents
+\end_layout
+
+\begin_layout Description
+KBP multidocument, focus on assembling a high quality knowledge base
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MUC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Follow the discussion in 
+\begin_inset CommandInset href
+LatexCommand href
+name "“Evaluating Message Understanding Systems: An Analysis of MUC-3”"
+target "www.aclweb.org/anthology/J93-3001"
+
+\end_inset
+
+ by Chincor et al.
+ in Comp Ling.
+ (1993) 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paper-263
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+MUC-3: 15 systems over terrorism in Latin America
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+train 1300 documents (400k word tokens over 18k word types
+\end_layout
+
+\begin_layout Description
+test 3 sets of 100 documents each (dry run, official test, muc-4)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Three approaches:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Pattern-matching
+\end_layout
+
+\begin_layout Enumerate
+Syntax-driven
+\end_layout
+
+\begin_layout Enumerate
+Sematic-driven
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MUC-3 Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-263-fig4.png
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.5cm}
+\end_layout
+
+\end_inset
+
+Figure 4 of Chincor et al.
+ (1993)
+\end_layout
+
+\begin_layout Itemize
+Documents come from a DB query to the FBIS
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+(Argentina OR Bolivia OR Chile OR Colombia OR Ecuador OR (El Salvador) OR
+ Guatemala OR Honduras OR Peru) AND (abduct OR abduction OR ambush OR arson
+ OR assassinate OR assassination OR assault OR (blow [up]) OR bomb OR bombing
+ OR explode OR explosion OR hijack OR hijacking OR kidnap OR kidnapping
+ OR kill OR killing OR murder OR rob OR shoot OR shooting OR steal OR terrorist)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MUC-3 Example (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Translated from Spanish by foreign broadcast information service (FBIS)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Text is all uppercase, strange and idiosyncratic
+\end_layout
+
+\begin_layout Itemize
+Text is interspersed with quoted speech and guerrilla communiques
+\end_layout
+
+\begin_layout Itemize
+Bad spelling and mistranslations
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+1,600 documents
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+1,300 development set
+\end_layout
+
+\begin_layout Itemize
+300 annotated: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+100 dev
+\end_layout
+
+\begin_layout Itemize
+100 test MUC-3
+\end_layout
+
+\begin_layout Itemize
+100 test MUC-4
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MUC-3 Example Template
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-263-fig5a.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Template has 18 slots
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Some slots reference other slots
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Different template types have different slots required 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Murder has no physical-target, those are for attack
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MUC-3 Example Template (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-263-fig5b.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+Figure 5 of Chincor et al.
+ (1993)
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MUC-3 Challenges
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Problems: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Deal with noisy, real world data (unusual for 1992)
+\end_layout
+
+\begin_layout Itemize
+Discriminate by date, old vs new information, criminal vs terrorist
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Not all documents are relevant
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Annotating the output templates was challenging
+\end_layout
+
+\begin_layout Itemize
+Deciding what to do with spurious templates (tiered evaluation):
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+matched only (considerate only 1 slot, template-id for the wrong templates)
+\end_layout
+
+\begin_layout Enumerate
+matched/missing (for spurious, consider only template-id but take all for
+ missing, official metric)
+\end_layout
+
+\begin_layout Enumerate
+all templates (all missing slots and all spurious slots, official metric
+ for muc-4)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MUC-3 Generic System Architecture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-263-fig9.png
+	height 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+Figure 9 of Chincor et al.
+ (1993)
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Precision / Recall Trade-off at MUC-3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-263-fig2.png
+	height 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+Figure 2 of Chincor et al.
+ (1993)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MUC-3 Conclusions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sites reported 10-11 person months for domain migration/adaptation.
+\end_layout
+
+\begin_layout Itemize
+ML team, 3 month effort
+\end_layout
+
+\begin_layout Itemize
+Hybrid: 6 month effort and top performer
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Other MUCs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Conference
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Year
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text Source
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Topic (Domain)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MUC-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1987
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Mil.
+ reports
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Fleet Operations
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MUC-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1989
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Mil.
+ reports
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Fleet Operations
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MUC-3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1991
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+News reports
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Terrorist activities in Latin America
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MUC-4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1992
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+News reports
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Terrorist activities in Latin America
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MUC-5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1993
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+News reports
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Corporate Joint Ventures, Microelectronic production
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MUC-6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1995
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+News reports
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minipage}{5cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Negotiation of Labor Disputes and Corporate Management Succession
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minipage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MUC-7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1997
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+News reports
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Airplane crashes, and Rocket/Missile Launches
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+from 
+\begin_inset CommandInset href
+LatexCommand href
+name "Wikipedia"
+target "https://en.wikipedia.org/wiki/Message_Understanding_Conference"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ACE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paper-261
+\end_layout
+
+\end_inset
+
+This discussion follows 
+\begin_inset CommandInset href
+LatexCommand href
+name "\"The Automatic Content Extraction (ACE) Program Tasks, Data, and Evaluation\""
+target "http://papers.ldc.upenn.edu/LREC2004/ACE.pdf"
+
+\end_inset
+
+ by Doddington et.
+ al.
+ (2004) at LREC
+\end_layout
+
+\begin_layout Itemize
+ACE objective:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Infer the entities being mentioned, relations among those entities directly
+ expressed and events where the entities participate
+\end_layout
+
+\begin_layout Itemize
+Multilingual (English, Arabic, Chinese) / multimodal (speech, scanned documents)
+\end_layout
+
+\begin_layout Itemize
+Extracting information from transduced (ASR/OCR) output text
+\end_layout
+
+\end_deeper
+\begin_layout Description
+2000-2001 entities
+\end_layout
+
+\begin_layout Description
+2002-2003 entities + relations
+\end_layout
+
+\begin_layout Description
+2004-2008 entities + relations + events
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ACE Approach
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Data, lots of data.
+ Enough data to attempt ML approaches.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-261-tab1.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+Table 1 of Doddington et.
+ al.
+ (2004)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ACE Subtasks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+EDT Entity Detection and Tracking
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Main task
+\end_layout
+
+\begin_layout Itemize
+All entity mentions (names, descriptions and pronouns) need to be clustered
+\end_layout
+
+\begin_layout Itemize
+7 entity types (Person, Organization, Location, Facility, Weapon, Vehicle
+ and Geo-Political Entity) (+ subtypes)
+\end_layout
+
+\begin_layout Itemize
+Nested mentions are captured ([Facility [PER George Washington] Bridge])
+\end_layout
+
+\end_deeper
+\begin_layout Description
+RDC Relation Detection and Characterization
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+5 types (Role,Part,At,Near,Social) / 24 subtypes of relations
+\end_layout
+
+\begin_layout Itemize
+Explicit relations vs.
+ contextual relations (no world knowledge relations)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ACE Subtasks (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+VDC Event Detection and Characterization
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Generalization of relations
+\end_layout
+
+\begin_layout Itemize
+Type (destroy, create, transfer, move, interact) and modality (real, not
+ real)
+\end_layout
+
+\end_deeper
+\begin_layout Description
+LNK Entity Linking
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Coreference
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ACE Challenges
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Complex task for annotators
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Require annotators that know linguistics
+\end_layout
+
+\begin_layout Itemize
+Difficulty of keeping teams in different languages in sync
+\end_layout
+
+\begin_layout Itemize
+5%-10% of the data re-annotated by different people
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Some interannotator agreement is really low (English relations are at 35%)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+TAC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paper-264
+\end_layout
+
+\end_inset
+
+This discussion follows 
+\begin_inset CommandInset href
+LatexCommand href
+name "“Overview of the TAC 2009 Knowledge Base Population Track”"
+target "http://www.nist.gov/tac/publications/2009/presentations/TAC2009_KBP_overview.pdf"
+
+\end_inset
+
+ by McNamee et al.
+ (2009) at TAC.
+\end_layout
+
+\begin_layout Itemize
+KBP: learn things from a corpus.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ACE: document based, KBP: corpus based
+\end_layout
+
+\begin_layout Itemize
+Learning wrong things is 
+\series bold
+bad
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Datasets: 1.3M English newswire + blogs collection from LDC (6.5Gb), from
+ 2007-2008
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+200k people
+\end_layout
+
+\begin_layout Itemize
+200k GPEs
+\end_layout
+
+\begin_layout Itemize
+80k org
+\end_layout
+
+\begin_layout Itemize
+300k misc from Wikipedia '08
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+TAC Subtasks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two tasks: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Entity Linking 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linking target entities to their Wikipedia page
+\end_layout
+
+\begin_layout Itemize
+Annotated 560 entities, 3904 mentions
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Slot filling (learning attributes about targets)
+\end_layout
+
+\begin_layout Itemize
+53 entities.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Top performing system, 82% accuracy
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+TAC Hardest Queries
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Subsidiary organization 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Xinhua Finance Ltd .vs Xinhua Finance Media Ltd 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Typographical mistake / ambiguous acronym 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+DCR for Democratic Republic of Congo 
+\end_layout
+
+\begin_layout Itemize
+MND (Taiwan Ministry of National Defense) referred to as NDM in text
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Metaphorical ´names´
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Iron Lady (several strong female politicians)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Unclear referent
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+New Caledonia (country or soccer team)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Mistakes in assessments
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+NYC Dept of Health, not US Dept of Health
+\end_layout
+
+\begin_layout Itemize
+NY State Dept of of Health, not US Dept of Health 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align right
+
+\size footnotesize
+from McNamee et al.
+ (2009), page 30
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+IE Subtasks
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IE Subtasks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paper-260
+\end_layout
+
+\end_inset
+
+This discussion follows 
+\begin_inset CommandInset href
+LatexCommand href
+name "“Information Extraction: Capabilities and Challenges”"
+target "http://www.cs.nyu.edu/grishman/tarragona.pdf"
+
+\end_inset
+
+ by Ralph Grishman at the International Winter School in Language and Speech
+ Technologies (2012)
+\end_layout
+
+\begin_layout Enumerate
+Entity detection / linking
+\end_layout
+
+\begin_layout Enumerate
+Event detection
+\end_layout
+
+\begin_layout Enumerate
+Frame building
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Named Entity Recognition
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+NER as a task was introduced in MUC-6
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Useful outside of IE, eg MT, QA
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Now 200 categories and no longer "names" (e.g., colors)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Initially high performance REs for names
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Example:
+\end_layout
+
+\begin_layout Standard
+[Fred Flintstone]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{person}}$
+\end_layout
+
+\end_inset
+
+ was named [CTO]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{position}}$
+\end_layout
+
+\end_inset
+
+ of [Time Bank Inc.]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{organization}}$
+\end_layout
+
+\end_inset
+
+ in [2031]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{date}}$
+\end_layout
+
+\end_inset
+
+ .
+ The [next year] [he] got married and became [CEO]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{position}}$
+\end_layout
+
+\end_inset
+
+ of [Dinosaur Savings & Loan]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{organization}}$
+\end_layout
+
+\end_inset
+
+ .
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Named Entity Recognition Techniques
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We will discuss them in class 2 (tomorrow)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Regular Expressions
+\end_layout
+
+\begin_layout Itemize
+Lists of names (gazzetteers) 
+\end_layout
+
+\begin_layout Itemize
+Machine learning
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linking Names to Entities
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In-document coreference
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Pronouns detection is good (80-90%)
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+[Fred Flintstone]
+\color inherit
+ was named CTO of Time Bank Inc.
+ in 2031.
+ The next year 
+\color blue
+[he]
+\color inherit
+ ...
+\end_layout
+
+\begin_layout Itemize
+Nouns coreference is not that good
+\end_layout
+
+\begin_layout Standard
+Fred Flintstone was named CTO of Time Bank Inc.
+ in 
+\color blue
+[2031]
+\color inherit
+.
+ The next 
+\color blue
+[year]
+\color inherit
+ he ...
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Cross-document coreference in research
+\end_layout
+
+\begin_layout Itemize
+Techniques:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Name matching
+\end_layout
+
+\begin_layout Itemize
+Word Sense Disambiguation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We will discuss them in class 2 (tomorrow)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Relations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Distinguish events (n-ary) vs relations (binary)
+\end_layout
+
+\begin_layout Itemize
+Example relations from TAC 2004:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Cross-sentence needed in 15% of cases
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+relation type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+subtype
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+physical 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+located, near, part-whole 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+personal-social 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+business, family, other 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minipage}{3cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+employment / membership / subsidiary 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minipage}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minipage}{6cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+employ-executive, employ-staff, employ-undetermined, 
+\end_layout
+
+\begin_layout Plain Layout
+
+member-of-group, partner, subsidiary, other
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minipage}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+agent-artifact 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+user-or-owner, inventor-or-manufacturer, other 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+person-org 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+affiliation ethnic, ideology, other 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GPE affiliation 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+citizen-or-resident, based-in, other 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+discourse 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Relation Detection Techniques
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We will discuss them in classes 3 and 4
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hand-crafted patterns (generalising using word classes and dependency trees)
+\end_layout
+
+\begin_layout Itemize
+Classifier: sentence + entities ⇒ relation (yes/no)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Events and Scenarios
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Relations with more than two slots
+\end_layout
+
+\begin_layout Itemize
+ACE 2005 events:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Event type 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Subtypes 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Life 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Be-born, Marry, Divorce, Injure, Die 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Movement 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transport 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transaction 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transfer-ownership, Transfer-money 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Business 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Start-org, Merge-org, Declare-bankruptcy, End-org 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Conflict 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Attack, Demonstrate 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Personnel 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Start-position, End-position, Nominate, Elect 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Justice 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minipage}{7cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+Arrest-jail, Release-parole, Trial-hearing Charge-indict, 
+\end_layout
+
+\begin_layout Plain Layout
+
+Sue, Convict, Sentence, Fine, Execute, Extradite, Acquit, 
+\end_layout
+
+\begin_layout Plain Layout
+
+Appeal, Pardon
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minipage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Events and Scenarios Techniques
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Single topic documents ⇒ scenario templates
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hand crafted (MUC):
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Slot filling 
+\end_layout
+
+\begin_layout Enumerate
+Consolidation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Supervised: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trigger-based classification (we will discuss on class 5 when we discuss
+ recent research)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+IRE: Implicit Relation Extraction, when the document describes a unique
+ event
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Focus of this course, we find a subdocument that contain an IRE then use
+ sequence tagging to extract it
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+This Course
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We will focus on high quality extraction from highly paradigmatic texts
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Very, very laborious
+\end_layout
+
+\begin_layout Itemize
+Plenty of industrial applications / interest
+\end_layout
+
+\begin_layout Itemize
+We will see a full example in a framework (other frameworks will be mentioned)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We will not directly cover some topics directly
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No general news / Twitter extraction
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Many of the techniques apply but the error rate is much higher
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No Open IE (relations signaled by lexical items)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Interesting idea, but require extra (human) work for many traditional applicatio
+ns
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Discuss recent research directions on Friday (class 5)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Target Students
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Students curious about NLP research in general
+\end_layout
+
+\begin_layout Itemize
+NLP students interested in moving into IE research
+\end_layout
+
+\begin_layout Itemize
+Open Data afficionados 
+\end_layout
+
+\begin_layout Itemize
+Professionals with a need for industrial IE 
+\end_layout
+
+\begin_layout Itemize
+Analytics professionals
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Current Research
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+On class 5 (Friday) we will discuss current research in the following topics:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Multilinguality: extracting information from texts written in multiple languages
+ (ACE)
+\end_layout
+
+\begin_layout Itemize
+Multiple sources: extracting information from multiple texts involving the
+ same entities (KBP)
+\end_layout
+
+\begin_layout Itemize
+Character-based Deep Learning models
+\end_layout
+
+\begin_layout Itemize
+Applying IE to novel media (i.e., social)
+\end_layout
+
+\begin_layout Itemize
+Modeling multiple domains at the same time (Open Domain IE)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Break
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Join as at #ie4opendata at FreeNode for some friendly debate on IE topics
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+\size scriptsize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://webchat.freenode.net/?channels=ie4opendata
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+NLP Pipelines
+\end_layout
+
+\begin_layout Subsection
+NLP Pipelines
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+20 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NLP Pipelines
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+As an IE system can profit from most of the results of NLP analytics, a
+ high performance IE system usually involves performing a number of processing
+ stages over the text
+\end_layout
+
+\begin_layout Itemize
+These stages build on previous stages and are usually assembled as a pipeline
+ of components
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linguistics Primer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+POS
+\end_layout
+
+\begin_layout Itemize
+Dependencies
+\end_layout
+
+\begin_layout Itemize
+Parsing: subject / objects / verbs
+\end_layout
+
+\begin_layout Itemize
+Phrases
+\end_layout
+
+\begin_layout Itemize
+Semantic classes
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Part-of-Speech
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Nouns: entities in the discourse
+\end_layout
+
+\begin_layout Itemize
+Articles: transform nouns into noun phrases
+\end_layout
+
+\begin_layout Itemize
+Adjectives: transform nouns into nouns
+\end_layout
+
+\begin_layout Itemize
+Adverbs: transform verbs into verbs
+\end_layout
+
+\begin_layout Itemize
+Verbs: transform noun phrases (and others) into verb phrases
+\end_layout
+
+\begin_layout Itemize
+Noun phrases: transform verb phrases into sentences
+\end_layout
+
+\begin_layout Itemize
+Pronouns: substitute for a noun or a noun phrase
+\end_layout
+
+\begin_layout Standard
+\align right
+See 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Categorial_grammar"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Part-of-Speech Tagging
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assign a morphosynactic class to each word in a sentence
+\end_layout
+
+\begin_layout Itemize
+It is challenging because many words have multiple potential uses as different
+ classes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Then I saw the 
+\series bold
+fire
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+She thinks they might 
+\series bold
+fire
+\series default
+ him.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A 
+\begin_inset Quotes eld
+\end_inset
+
+solved
+\begin_inset Quotes erd
+\end_inset
+
+ task in NLP
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kristina Toutanova, Dan Klein, Christopher Manning, and Yoram Singer.
+ 2003.
+ Feature-Rich Part-of-Speech Tagging with a Cyclic Dependency Network.
+ In Proceedings of HLT-NAACL 2003, pp.
+ 252-259.
+\end_layout
+
+\begin_layout Itemize
+"97.24%" accuracy per token 
+\end_layout
+
+\begin_layout Itemize
+56% 
+\series bold
+sentence
+\series default
+ level accuracy
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+That's including a class like /TO
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Dependency Parsing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Instead of building a full syntactic parse, associate each word for a 
+\begin_inset Quotes eld
+\end_inset
+
+head
+\begin_inset Quotes erd
+\end_inset
+
+ word
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Wearetryingtounderstandthedifference_(2).jpg
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+from 
+\begin_inset CommandInset href
+LatexCommand href
+name "Wikipedia"
+target "https://en.wikipedia.org/wiki/Dependency_grammar#/media/File:Wearetryingtounderstandthedifference_%282%29.jpg"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Full Parsing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Identify the different constituents of the sentence
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Noun phrases (their core concept, the head, is a noun)
+\end_layout
+
+\begin_layout Itemize
+Verb phrases: verb head
+\end_layout
+
+\begin_layout Itemize
+Adjectival phrases
+\end_layout
+
+\begin_layout Itemize
+Adverbial phrases
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Different theories of parsing, different grammars
+\end_layout
+
+\begin_layout Itemize
+Most systems use a Tree Bank of human annotated parse trees
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Wall Street Journal articles
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Role Labeling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A type of semantic parsing
+\end_layout
+
+\begin_layout Itemize
+For certain verbs, identify 
+\begin_inset Quotes eld
+\end_inset
+
+roles
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paper-280
+\end_layout
+
+\end_inset
+
+(list adapted from 
+\begin_inset CommandInset href
+LatexCommand href
+name "Natural Language Annotation for Machine Learning "
+target "https://www.safaribooksonline.com/library/view/natural-language-annotation/9781449332693/"
+
+\end_inset
+
+ by Pustejovsky and Stubbs (2013))
+\end_layout
+
+\begin_layout Description
+agent participant that is doing or causing the action to occur
+\end_layout
+
+\begin_layout Description
+theme/figure participant who undergoes a change in position or state
+\end_layout
+
+\begin_layout Description
+experiencer participant experiencing or perceiving something
+\end_layout
+
+\begin_layout Description
+source location or place from which motion begins; person from whom the
+ theme is given
+\end_layout
+
+\begin_layout Description
+goal location or place to which the motion is directed or terminates
+\end_layout
+
+\begin_layout Standard
+(...)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IE Pipelines
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-259-fig62.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+From Text Mining, Weiss et al.
+ (2005) Figure 6.2
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IE Pipelines (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-259-fig63.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+From Text Mining, Weiss et al.
+ (2005) Figure 6.3
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What is UIMA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item UIMA is a framework, a means to integrate text or other unstructured
+ information analytics.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Reference implementations available for Java, C++ and others.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item An Open Source project under the umbrella of the Apache Foundation.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize} 
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Analytics Frameworks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\backslash
+item Find all telephone numbers in running text
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\backslash
+item 
+\backslash
+verb~(((~$
+\backslash
+mathtt
+\backslash
+backslash$
+\backslash
+verb~([0-9]
+\backslash
+{3
+\backslash
+}~$
+\backslash
+mathtt
+\backslash
+backslash$
+\backslash
+verb~))|[0-9]
+\backslash
+{3
+\backslash
+})-?~
+\backslash
+
+\backslash
+ 
+\backslash
+verb~[0-9]
+\backslash
+{3
+\backslash
+}-?[0-9]
+\backslash
+{4
+\backslash
+}~ 
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Nice but...
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\backslash
+item How are you going to feed this further processing? 
+\backslash
+item What about finding non-standard proper names in text? 
+\backslash
+item Acquiring technology from external vendors, free software projects,
+ etc? 
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+In-line Annotations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Modify text to include annotations 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item This
+\backslash
+alert{/DET} happy
+\backslash
+alert{/ADJ} puppy
+\backslash
+alert{/N} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item It gets very messy very quickly 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\backslash
+item (S (NP (This/DET happy/ADJ puppy/N) (VP eats/V (NP (the/DET bone/N)))
+ 
+\backslash
+end{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Annotations can easily cross boundaries of other annotations 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\backslash
+item He said 
+\backslash
+textbf{<confidential>}the project can't go own.
+ The funding is lacking.
+\backslash
+textbf{</confidential>} 
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Stand-off Annotations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Standoff annotations
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\backslash
+item Do not modify the text 
+\backslash
+item Keep the annotations as offsets within the original text 
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Most analytics frameworks support standoff annotations.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item UIMA is built with standoff annotations at its core.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Example:
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{c} {
+\backslash
+tt
+\backslash
+tiny He said the project can't go own.
+ The funding is lacking.}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline {
+\backslash
+tt
+\backslash
+tiny 
+\backslash
+alert{0}1234567
+\backslash
+alert{8}90123456789012356789012
+\backslash
+alert{3}45
+\backslash
+alert{6}789012345678901234567
+\backslash
+alert{8}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\backslash
+item Sentence Annotation: 0-33, 36-58.
+ 
+\backslash
+item Confidential Annotation: 8-58.
+ 
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Type Systems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} %0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Key to integrating analytic packages developed by independent vendors.
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Clear metadata about        
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} %1           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Expected Inputs        
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}          
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Tokens, sentences, proper names, etc        
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}                
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Produced Outputs        
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}          
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Parse trees, opinions, etc        
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}      
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize} %1
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+item The framework creates an 
+\backslash
+alert{unified} typesystem for a given set of annotators being run.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize} %0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Many Frameworks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\backslash
+item Besides UIMA 
+\backslash
+begin{itemize}
+\backslash
+item 
+\backslash
+texttt{
+\backslash
+url{http://uima.apache.org}}
+\backslash
+end{itemize} 
+\backslash
+item LingPipe 
+\backslash
+begin{itemize}
+\backslash
+item 
+\backslash
+texttt{
+\backslash
+url{http://alias-i.com/lingpipe/}}
+\backslash
+end{itemize} 
+\backslash
+item Gate 
+\backslash
+begin{itemize}
+\backslash
+item 
+\backslash
+texttt{
+\backslash
+url{http://gate.ac.uk/}}
+\backslash
+end{itemize} 
+\backslash
+end{itemize}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+UIMA Advantages
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Apache Licensed 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Enterprise-ready code quality 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Demonstrated scalability 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Developed by experts in building frameworks 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}
+\backslash
+item Not domain (e.g., NLP) experts
+\backslash
+end{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Interoperable (C++, Java, others) 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Java Refresher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Java is a statically typed compiled to virtual machine code language
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Class-based, single inheritance
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Each class becomes a dynamically linked library loaded at runtime by the
+ virtual machine
+\end_layout
+
+\begin_layout Itemize
+Also the base of the Dalvik VM used in Android
+\end_layout
+
+\begin_layout Itemize
+Dependency management and build cycle is usually managed with the Apache
+ Maven tool:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+mvn clean
+\end_layout
+
+\begin_layout Itemize
+mvn compile
+\end_layout
+
+\begin_layout Itemize
+mvn test
+\end_layout
+
+\begin_layout Itemize
+mvn deploy
+\end_layout
+
+\begin_layout Itemize
+pom.xml (Project Object Model)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+UIMA Tutorial
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+30 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+UIMA tutorial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Common Annotation Structure or CAS 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Subject of Analysis (SofA or View) 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item JCas 
+\backslash
+end{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Feature Structures 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Annotations 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Indices and Iterators 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Analysis Engines (AEs) 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\backslash
+item AEs descriptors 
+\backslash
+end{itemize} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Room Annotator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize} 
+\backslash
+item From the UIMA tutorial, write an Analysis Engine that identifies room
+ numbers in text.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{description} 
+\backslash
+item[{Yorktown patterns:}] 20-{}001, 31-{}206, 04-{}123 (Regular Expression
+ Pattern:             [0-{}9][0-{}9]-{}[0-{}2][0-9][0-{}9]) 
+\backslash
+item[{Hawthorne patterns:}] GN-{}K35, 1S-{}L07, 4N-{}B21 (Regular Expression
+ Pattern:             [G1-{}4][NS]-{}[A-{}Z][0-{}9]) 
+\backslash
+end{description}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Steps:
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item{}Define the CAS types that the       annotator will use.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item{}Generate the Java classes for these types.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item{}Write the actual annotator Java code.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item{}Create the Analysis Engine descriptor.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item{}Test the annotator.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Editing a Type System
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename image002.jpg
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+From UIMA Tutorial and User's Guide
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{The XML descriptor}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=1,language=xml]
+\end_layout
+
+\begin_layout Plain Layout
+
+<?xml version="1.0" encoding="UTF-8" ?>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+\end_layout
+
+\begin_layout Plain Layout
+
+    <name>TutorialTypeSystem</name>
+\end_layout
+
+\begin_layout Plain Layout
+
+    <description>Type System Definition for the tutorial examples - 
+\end_layout
+
+\begin_layout Plain Layout
+
+        as of Exercise 1</description>
+\end_layout
+
+\begin_layout Plain Layout
+
+    <vendor>Apache Software Foundation</vendor>
+\end_layout
+
+\begin_layout Plain Layout
+
+    <version>1.0</version>
+\end_layout
+
+\begin_layout Plain Layout
+
+    <types>
+\end_layout
+
+\begin_layout Plain Layout
+
+      <typeDescription>
+\end_layout
+
+\begin_layout Plain Layout
+
+        <name>org.apache.uima.tutorial.RoomNumber</name>
+\end_layout
+
+\begin_layout Plain Layout
+
+        <description></description>
+\end_layout
+
+\begin_layout Plain Layout
+
+        <supertypeName>uima.tcas.Annotation</supertypeName>
+\end_layout
+
+\begin_layout Plain Layout
+
+        <features>
+\end_layout
+
+\begin_layout Plain Layout
+
+          <featureDescription>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <name>building</name>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <description>Building containing this room</description>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <rangeTypeName>uima.cas.String</rangeTypeName>
+\end_layout
+
+\begin_layout Plain Layout
+
+          </featureDescription>
+\end_layout
+
+\begin_layout Plain Layout
+
+        </features>
+\end_layout
+
+\begin_layout Plain Layout
+
+      </typeDescription>
+\end_layout
+
+\begin_layout Plain Layout
+
+    </types>
+\end_layout
+
+\begin_layout Plain Layout
+
+  </typeSystemDescription>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{The AE code}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=1,language=java]
+\end_layout
+
+\begin_layout Plain Layout
+
+package org.apache.uima.tutorial.ex1;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.util.regex.Matcher;
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.util.regex.Pattern;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
+\end_layout
+
+\begin_layout Plain Layout
+
+import org.apache.uima.jcas.JCas;
+\end_layout
+
+\begin_layout Plain Layout
+
+import org.apache.uima.tutorial.RoomNumber;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Example annotator that detects room numbers using 
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Java 1.4 regular expressions.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+public class RoomNumberAnnotator extends JCasAnnotator_ImplBase {
+\end_layout
+
+\begin_layout Plain Layout
+
+  private Pattern mYorktownPattern = 
+\end_layout
+
+\begin_layout Plain Layout
+
+        Pattern.compile("
+\backslash
+
+\backslash
+b[0-4]
+\backslash
+
+\backslash
+d-[0-2]
+\backslash
+
+\backslash
+d
+\backslash
+
+\backslash
+d
+\backslash
+
+\backslash
+b");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  private Pattern mHawthornePattern = 
+\end_layout
+
+\begin_layout Plain Layout
+
+        Pattern.compile("
+\backslash
+
+\backslash
+b[G1-4][NS]-[A-Z]
+\backslash
+
+\backslash
+d
+\backslash
+
+\backslash
+d
+\backslash
+
+\backslash
+b");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  public void process(JCas aJCas) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    // next slide
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{The AE code (cont.)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=1,language=java]
+\end_layout
+
+\begin_layout Plain Layout
+
+  public void process(JCas aJCas) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    // get document text
+\end_layout
+
+\begin_layout Plain Layout
+
+    String docText = aJCas.getDocumentText();
+\end_layout
+
+\begin_layout Plain Layout
+
+    // search for Yorktown room numbers
+\end_layout
+
+\begin_layout Plain Layout
+
+    Matcher matcher = mYorktownPattern.matcher(docText);
+\end_layout
+
+\begin_layout Plain Layout
+
+    int pos = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (matcher.find(pos)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+      // found one - create annotation
+\end_layout
+
+\begin_layout Plain Layout
+
+      RoomNumber annotation = new RoomNumber(aJCas);
+\end_layout
+
+\begin_layout Plain Layout
+
+      annotation.setBegin(matcher.start());
+\end_layout
+
+\begin_layout Plain Layout
+
+      annotation.setEnd(matcher.end());
+\end_layout
+
+\begin_layout Plain Layout
+
+      annotation.setBuilding("Yorktown");
+\end_layout
+
+\begin_layout Plain Layout
+
+      annotation.addToIndexes();
+\end_layout
+
+\begin_layout Plain Layout
+
+      pos = matcher.end();
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    // search for Hawthorne room numbers
+\end_layout
+
+\begin_layout Plain Layout
+
+    // ..
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{An UIMA Maven Project}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=1,language=xml]
+\end_layout
+
+\begin_layout Plain Layout
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/X
+MLSchema-instance"         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+ http://maven.apache.org/xsd/maven-4.0.0.xsd">         <modelVersion>4.0.0</modelVersio
+n> 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                <dependency>
+\end_layout
+
+\begin_layout Plain Layout
+
+                        <groupId>org.apache.uima</groupId>
+\end_layout
+
+\begin_layout Plain Layout
+
+                        <artifactId>uimaj-core</artifactId>
+\end_layout
+
+\begin_layout Plain Layout
+
+                        <version>2.7.0</version>
+\end_layout
+
+\begin_layout Plain Layout
+
+                </dependency>
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+UIMA Document Analyzer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename image014.jpg
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+From UIMA Tutorial and User's Guide
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+UIMA Document Analyzer (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename image018.jpg
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+From UIMA Tutorial and User's Guide
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Control Flow
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item UIMA allows you to specify which AE will receive the CAS next, based
+ on all the annotations on the CAS.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item {
+\backslash
+tiny 
+\backslash
+verb ~ examples/descriptors/flow
+\backslash
+_controller/WhiteboardFlowController.xml ~ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item FlowController implementing a simple version of the ``whiteboard''
+\end_layout
+
+\begin_layout Plain Layout
+
+  flow model.
+ Each time a CAS is received, it looks at the pool of
+\end_layout
+
+\begin_layout Plain Layout
+
+  available AEs that have not yet run on that CAS, and picks one whose
+\end_layout
+
+\begin_layout Plain Layout
+
+  input requirements are satisfied.
+  Limitations: only looks at types,
+\end_layout
+
+\begin_layout Plain Layout
+
+  not features.
+ Does not handle multiple Sofas or CasMultipliers.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{Annotation Serialization}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item XMI is an OMG standard for expressing objects graphs in XML.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=1,language=xml]
+\end_layout
+
+\begin_layout Plain Layout
+
+<?xml version="1.0"?>
+\end_layout
+
+\begin_layout Plain Layout
+
+<xmi:XMI xmi:version="2.0" xmlns:xmi=http://www.omg.org/XMI
+\end_layout
+
+\begin_layout Plain Layout
+
+xmlns:cas="http:///uima/cas.ecore" xmlns:myproj="http:///org/myproj.ecore">
+\end_layout
+
+\begin_layout Plain Layout
+
+<cas:Sofa xmi:id="1" sofaNum="1"
+\end_layout
+
+\begin_layout Plain Layout
+
+text="the quick brown fox jumps over the lazy dog."/>
+\end_layout
+
+\begin_layout Plain Layout
+
+<myproj:Foo xmi:id="2" begin="14" end="19" myFeature="bar"/>
+\end_layout
+
+\begin_layout Plain Layout
+
+<cas:View sofa="1" members="2"/>
+\end_layout
+
+\begin_layout Plain Layout
+
+</xmi:XMI>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+End-to-End Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+End-to-End Case Study
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Octroy Pipeline
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Information Extraction for Open Data
+\end_layout
+
+\begin_layout Itemize
+Proceedings of the Executive Committee in the cities of Montreal and Laval
+\end_layout
+
+\begin_layout Itemize
+French
+\end_layout
+
+\begin_layout Itemize
+Focus on finding which company got what money for what reason
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Open Data and IE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Open Data: governments realising large quantities of unstructured information
+\end_layout
+
+\begin_layout Itemize
+Use IE to fulfill Open Data mission of increased awareness and transparency
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "FIOA request by Montreal Gazette journalist Roberto Rocha"
+target "https://www.dropbox.com/s/gi57nwsaiif77jp/gazette-docs.sql.gz"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+28,376 decisions
+\end_layout
+
+\begin_layout Itemize
+112Mb 
+\end_layout
+
+\begin_layout Itemize
+458,190 lines 
+\end_layout
+
+\begin_layout Itemize
+2,456,420 words 
+\end_layout
+
+\begin_layout Itemize
+87 words per decision (average)
+\end_layout
+
+\begin_layout Itemize
+25k pages if printed
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "NEQ: Enterprise Registry of Quebec (CC-BY-NC)"
+target "https://www.donneesquebec.ca/recherche/fr/dataset/registre-des-entreprises"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2,088,934 companies
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Identify which decisions authorize (French 
+\emph on
+octroyer
+\emph default
+) payment to companies
+\end_layout
+
+\begin_layout Itemize
+For these decisions, extract company name, amount and reason
+\end_layout
+
+\begin_layout Itemize
+Link company to the NEQ registry
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Types
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Types 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Enterprise 
+\end_layout
+
+\begin_layout Enumerate
+Amount 
+\end_layout
+
+\begin_layout Enumerate
+Reason
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Relation 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Contract
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/opendatacz/public-contracts-ontology"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename public-contracts-uml.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Octroy Components
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Collection reader (runs from the DB and brings up the date, too) 
+\end_layout
+
+\begin_layout Enumerate
+Relevant text segments (RuTA) 
+\end_layout
+
+\begin_layout Enumerate
+Sentence splitting (OpenNLP) 
+\end_layout
+
+\begin_layout Enumerate
+Tokenization (OpenNLP) 
+\end_layout
+
+\begin_layout Enumerate
+Amount annotation (RuTA) 
+\end_layout
+
+\begin_layout Enumerate
+Enterprise dictionary (using NEQ dictionary) 
+\end_layout
+
+\begin_layout Enumerate
+CRF (for Enterprise and Reason) 
+\end_layout
+
+\begin_layout Enumerate
+Postprocessing (RuTA) 
+\end_layout
+
+\begin_layout Enumerate
+Entity linking (to the NEQ ID) 
+\end_layout
+
+\begin_layout Enumerate
+Event extraction (populates the .cz ontology) 
+\end_layout
+
+\begin_layout Enumerate
+CAS Consumer (RDF writer)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Initial Data Analysis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Data Release Schedule: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+randomize document IDs, pick 30% as development set
+\end_layout
+
+\begin_layout Itemize
+8,513 as devset
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Take the first 36 and analyze them by hand
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+18 contains contracts (50%)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Issues:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Approving money transfer to another gov't org (not a contract)
+\end_layout
+
+\begin_layout Itemize
+Contracts with no amount (kept)
+\end_layout
+
+\begin_layout Itemize
+Subsidies (kept as contract, the reason is subsidy)
+\end_layout
+
+\begin_layout Itemize
+When a company 
+\emph on
+pays
+\emph default
+ the gov't it has all the information as when the 
+\emph on
+gov't
+\emph default
+ pays a company.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Examples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+583.txt
+\end_layout
+
+\end_inset
+
+Contrat de construction
+\end_layout
+
+\begin_layout Quote
+CM Montréal-Nord , Bureau du directeur d'arrondissement - 1063602020
+\end_layout
+
+\begin_layout Quote
+Octroyer un contrat de 
+\color blue
+1 328 000,65 $
+\color inherit
+, taxes incluses à 
+\color brown
+TGA Montréal inc.
+
+\color inherit
+ pour 
+\color green
+des travaux de réfection d'égout, d'aqueduc, de trottoirs et de pavages
+ sur les avenues Drapeau, Éthier et Patricia
+\color inherit
+ (Contrat No 755) 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Examples (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10985.txt
+\end_layout
+
+\end_inset
+
+
+\size small
+CE-2011/4460
+\end_layout
+
+\begin_layout Quote
+
+\size small
+CONTRAT - SOUMISSION «OS-ING/2011-041» ÉQUATION GROUPE CONSEIL INC.
+\end_layout
+
+\begin_layout Quote
+
+\size small
+RÉSOLU À L'UNANIMITÉ: que la soumission «OS-ING/2011-041» déposée par la
+ firme 
+\color brown
+Équation groupe conseil inc.
+
+\color inherit
+ concernant 
+\color green
+les services professionnels d'ingénieurs-conseils pour la préparation des
+ plans et devis ainsi que pour les services durant la construction des travaux
+ d'aménagement d'un terrain de tennis double au parc des Nénuphars
+\color inherit
+, prévus au règlement L-11796, soit acceptée et qu'à cette fin, la firme
+ susdite prépare les plans, devis et documents de soumissions au montant
+ de 
+\color blue
+31 317,07 $
+\color inherit
+; que les honoraires soient calculés conformément aux dispositions de la
+ soumission «OS-ING/2011-041»; que le Greffier ou la Greffière adjointe
+ retourne les garanties qui accompagnaient les soumissions non retenues.
+ (C/T: 1207248) (Réf: 12-2) 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Examples of Other Documents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10966.txt
+\end_layout
+
+\end_inset
+
+_____________________________________________________
+\end_layout
+
+\begin_layout Quote
+CE-2011/4502
+\end_layout
+
+\begin_layout Quote
+SOUMISSIONS «OS-27912» REJETÉES
+\end_layout
+
+\begin_layout Quote
+RÉSOLU À L'UNANIMITÉ: que toutes les soumissions reçues portant le numéro
+ «OS-27912» concernant l'acquisition et la mise en place d'un progiciel
+ pour la gestion des heures et des horaires de travail (PPHT) soient et,
+ par la présente, sont rejetées; que le Greffier ou la Greffière adjointe
+ retourne les chèques ou garanties qui accompagnaient les soumissions.
+ (Réf: 26-28) 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Examples of Other Documents (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+1865.txt
+\end_layout
+
+\end_inset
+
+
+\size small
+Immeuble - Aliénation
+\end_layout
+
+\begin_layout Quote
+
+\size small
+CE Mise en valeur du territoire et du patrimoine , Direction stratégies
+ et transactions immobilières - 1074501006
+\end_layout
+
+\begin_layout Quote
+
+\size small
+Approuver un projet d'acte par lequel la Ville vend à Mark C.
+ Moore, propriétaire des immeubles sis aux 3616-3652, rue Notre-Dame Ouest,
+ un terrain situé dans l'arrondissement Le Sud-Ouest au sud-est de la rue
+ Notre-Dame et au nord-est de la rue Bourget, constitué des lots 3 916 775
+ et 3 916 776 du cadastre du Québec, aux fins d'assemblage, d'une superficie
+ totale d' environ 99,1 mètres carrés, pour le prix de 9 600 $, plus les
+ taxes, si applicables, le tout sujet aux termes et conditions stipulés
+ au projet d'acte.
+\end_layout
+
+\begin_layout Quote
+
+\size small
+Territoire(s) concerné(s) : Le Sud-Ouest District(s) : Saint-Henri - Petite-Bour
+gogne - Pointe-Saint-Charles 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Quick Perl Baseline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Analysis of 36 documents
+\end_layout
+
+\begin_layout Itemize
+50 lines of perl
+\end_layout
+
+\begin_layout Itemize
+Only documents with an amount and a company
+\end_layout
+
+\begin_layout Itemize
+Only companies that end in Inc.
+ (ignoring case)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{A Quick Perl Baseline (cont.)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=perl,numbers=left,
+\end_layout
+
+\begin_layout Plain Layout
+
+basicstyle=
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                keywordstyle=
+\backslash
+color{blue}
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                commentstyle=
+\backslash
+color{red}
+\backslash
+ttfamily}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=5,language=perl]
+\end_layout
+
+\begin_layout Plain Layout
+
+my@doc=<STDIN>;
+\end_layout
+
+\begin_layout Plain Layout
+
+chomp(@doc);
+\end_layout
+
+\begin_layout Plain Layout
+
+my$doc=join(" ",@doc); # one line, return characters transformed into spaces
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up header
+\end_layout
+
+\begin_layout Plain Layout
+
+if($doc=~ m/RÉSOLU À L'UNANIMITÉ
+\backslash
+:/){
+\end_layout
+
+\begin_layout Plain Layout
+
+    $doc =~ s/.*RÉSOLU À L'UNANIMITÉ://;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+my@amounts = $doc =~ 
+\end_layout
+
+\begin_layout Plain Layout
+
+  m/(
+\backslash
+d?
+\backslash
+d?(?:
+\backslash
+s?|
+\backslash
+.?)
+\backslash
+d{3}(?:
+\backslash
+s?|,?)(?:
+\backslash
+d{3})?(?:
+\backslash
+,
+\backslash
+d{2})?
+\backslash
+s?
+\backslash
+$)/g;
+\end_layout
+
+\begin_layout Plain Layout
+
+if(!@amounts){ # no amount, bail-out
+\end_layout
+
+\begin_layout Plain Layout
+
+    print "0
+\backslash
+n"; exit;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{A Quick Perl Baseline (cont.)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=perl,numbers=left,
+\end_layout
+
+\begin_layout Plain Layout
+
+basicstyle=
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                keywordstyle=
+\backslash
+color{blue}
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                commentstyle=
+\backslash
+color{red}
+\backslash
+ttfamily}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=19,language=perl]
+\end_layout
+
+\begin_layout Plain Layout
+
+# has amount
+\end_layout
+
+\begin_layout Plain Layout
+
+if($#amounts){ # more than one amount, bail-out
+\end_layout
+
+\begin_layout Plain Layout
+
+    print "0
+\backslash
+n"; exit;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+# got the amount, now find the company
+\end_layout
+
+\begin_layout Plain Layout
+
+my$amount = pop @amounts;
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+# is there a inc.
+ ?
+\end_layout
+
+\begin_layout Plain Layout
+
+my@incs = split(/
+\backslash
+sinc
+\backslash
+./i, $doc);
+\end_layout
+
+\begin_layout Plain Layout
+
+if(!$#incs){ # no company, bail-out
+\end_layout
+
+\begin_layout Plain Layout
+
+    print "0
+\backslash
+n"; exit;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{A Quick Perl Baseline (cont.)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=perl,numbers=left,
+\end_layout
+
+\begin_layout Plain Layout
+
+basicstyle=
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                keywordstyle=
+\backslash
+color{blue}
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                commentstyle=
+\backslash
+color{red}
+\backslash
+ttfamily}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=32,language=perl]
+\end_layout
+
+\begin_layout Plain Layout
+
+# let's focus on the first one, we know $incs[0] ends in 
+\backslash
+sinc.
+\end_layout
+
+\begin_layout Plain Layout
+
+my$company = $incs[0];
+\end_layout
+
+\begin_layout Plain Layout
+
+# trim as much as possible
+\end_layout
+
+\begin_layout Plain Layout
+
+$company=~ s/.*firme//i;
+\end_layout
+
+\begin_layout Plain Layout
+
+$company=~s/.*à//i;
+\end_layout
+
+\begin_layout Plain Layout
+
+$company=~s/.*
+\backslash
+spar
+\backslash
+sle//i;
+\end_layout
+
+\begin_layout Plain Layout
+
+$company=~s/.*
+\backslash
+sla
+\backslash
+scompagnie
+\backslash
+s//i;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{A Quick Perl Baseline (cont.)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=perl,numbers=left,
+\end_layout
+
+\begin_layout Plain Layout
+
+basicstyle=
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                keywordstyle=
+\backslash
+color{blue}
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                commentstyle=
+\backslash
+color{red}
+\backslash
+ttfamily}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=40,language=perl]
+\end_layout
+
+\begin_layout Plain Layout
+
+# reason is a crapshoot
+\end_layout
+
+\begin_layout Plain Layout
+
+my$reason="";
+\end_layout
+
+\begin_layout Plain Layout
+
+if($doc =~
+\end_layout
+
+\begin_layout Plain Layout
+
+ m/((du
+\backslash
+scontrat
+\backslash
+sde)|(requis
+\backslash
+spour)|(concernant)|
+\end_layout
+
+\begin_layout Plain Layout
+
+(
+\backslash
+Q$amount
+\backslash
+E
+\backslash
+spour)|(
+\backslash
+Q$company
+\backslash
+E
+\backslash
+s[Ii][Nn][Cc]
+\backslash
+.
+\backslash
+spour))/){
+\end_layout
+
+\begin_layout Plain Layout
+
+    ($reason) = $doc =~ m/(?:(?:du
+\backslash
+scontrat
+\backslash
+sde)|(?:requis
+\backslash
+spour)|
+\end_layout
+
+\begin_layout Plain Layout
+
+(?:concernant)|(?:
+\backslash
+Q$amount
+\backslash
+E
+\backslash
+spour)|
+\end_layout
+
+\begin_layout Plain Layout
+
+(?:
+\backslash
+Q$company
+\backslash
+E
+\backslash
+s[Ii][Nn][Cc]
+\backslash
+.
+\backslash
+spour))
+\backslash
+s(.*)/;
+\end_layout
+
+\begin_layout Plain Layout
+
+    # trim aggressively
+\end_layout
+
+\begin_layout Plain Layout
+
+    $reason =~ s/(
+\backslash
+,|
+\backslash
+.|
+\backslash
+;).*//;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print "1
+\backslash
+t$amount
+\backslash
+t$company inc.
+\backslash
+t$reason
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Baseline Evaluation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+On the same 36 documents were it was programmed:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+System
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Annotated
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tp: 6 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fn: 10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fp: 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tn: 20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+precision = 6 / 6 = 1.0 
+\end_layout
+
+\begin_layout Itemize
+recall = 6 / 16 = 0.375
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+but partial reason in one and missing reason in another
+\end_layout
+
+\begin_layout Itemize
+4 fn due to lack of amount, 6 due to lack of inc.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+On 32 unseen ones
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+tp: 5 fn: 9 tn: 18
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+precision = 5 / 5 = 1.0 
+\end_layout
+
+\begin_layout Itemize
+recall = 5 / 13 = 0.38
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Baseline Evaluation (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+On 32 new documents:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+System
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Annotated
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tp: 5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fn: 9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fp: 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tn: 18
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+precision = 5 / 5 = 1.0 
+\end_layout
+
+\begin_layout Itemize
+recall = 5 / 13 = 0.38
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+but only 2 perfect, 1 wrong company and no reason, 1 no reason and 1 reason
+ is whole doc
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2 fn due to lack of amount, 7 due to lack of inc.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Rest of this Course
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What is to come
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Entity Detection and Linking
+\end_layout
+
+\begin_layout Itemize
+Rule-based IE
+\end_layout
+
+\begin_layout Itemize
+Statistical IE
+\end_layout
+
+\begin_layout Itemize
+Integration / Research directions
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Class 2: Entity Detection and Linking
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Named Entity Recognition
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lists of words
+\end_layout
+
+\begin_layout Itemize
+Regular Expressions
+\end_layout
+
+\begin_layout Itemize
+Basic ML
+\end_layout
+
+\begin_layout Itemize
+Beginning / Inside / Out annotation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Entity Linking
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Word Sense Disambiguation
+\end_layout
+
+\begin_layout Itemize
+Context Search Engine
+\end_layout
+
+\begin_layout Itemize
+DBpedia Spotlight
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Class 3: Rule-Based IE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+RE-based rules
+\end_layout
+
+\begin_layout Itemize
+Anchor-based rules
+\end_layout
+
+\begin_layout Itemize
+Rule-learning
+\end_layout
+
+\begin_layout Itemize
+Apache RuTA
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Class 4: Statistical IE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sequence tagging
+\end_layout
+
+\begin_layout Itemize
+HMMs / MEMMs / CRFs
+\end_layout
+
+\begin_layout Itemize
+ClearTk
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Class 5: Integration & Research
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Integration
+\end_layout
+
+\begin_layout Itemize
+Annotation
+\end_layout
+
+\begin_layout Itemize
+Research directions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Open IE
+\end_layout
+
+\begin_layout Itemize
+Cross-document IE
+\end_layout
+
+\begin_layout Itemize
+Multilingual IE
+\end_layout
+
+\begin_layout Itemize
+Multimedia IE
+\end_layout
+
+\begin_layout Itemize
+Adaptation for IE
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Course Evaluation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To pass this course I am asking you to take the class example and either
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+extended / modify it over the existing data OR
+\end_layout
+
+\begin_layout Itemize
+Apply it to a different dataset
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The output is a one-page report we will discuss the last class
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Handout
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\size small
+Chapter 22 -- Information Extraction from Speech and Language Processing:
+ An Introduction to Speech Recognition, Computational Linguistics and Natural
+ Language Processing: Second Edition, Daniel Jurafsky & James H.
+ Martin.
+ Draft of October 15, 2007.
+\end_layout
+
+\begin_layout Enumerate
+
+\size small
+Cunningham H (2006), Information Extraction, Automatic.
+ In: Keith Brown, (Editor-in-Chief) Encyclopedia of Language & Linguistics,
+ Second Edition, volume 5, pp.
+ 665-677.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\size small
+Chapter 7 -- Extracting Information from Text Natural Language Processing
+ with Python, by Steven Bird, Ewan Klein and Edward Loper, Copyright (C)
+ 2014 the authors.
+\end_layout
+
+\begin_layout Enumerate
+
+\size small
+Chapter 2 -- UIMA Conceptual Overview UIMA Documentation Overview by The
+ Apache UIMA Development Community.
+ Version 2.8.1 -- Copyright (C) 2006 The Apache Software Foundation
+\end_layout
+
+\begin_layout Enumerate
+
+\size small
+UIMA RuTA tutorial by Peter Klügl at GSCL 2013.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Daily Feedback
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+At the end of each class, take a moment to write on a piece of paper:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Any questions or comments you might have
+\end_layout
+
+\begin_layout Itemize
+A brief summary of the topics of the day seen in class
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Put your name in the paper to track attendance
+\end_layout
+
+\begin_layout Itemize
+Your questions and comments will be addressed the next class
+\end_layout
+
+\begin_layout Itemize
+This is mandatory
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
