@@ -1,0 +1,3852 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{Warsaw}
+\usecolortheme{wolverine}
+% or ...
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Copyright 2016 by Pablo Duboue <pablo.duboue@gmail.com>.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+All content otherwise stated is licensed under CC-BY-SA.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Hybrid Information Extraction Systems
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ECI2016T2 Class 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+Class 2: Entity Linking
+\end_layout
+
+\begin_layout Author
+Pablo Ariel Duboue, PhD
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+© 2016 Pablo Duboue, licensed under CC-BY-SA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+30va Escuela de Ciencias Informaticas (ECI)
+\begin_inset Newline newline
+\end_inset
+
+Facultad de Cs.
+ Exactas y Naturales UBA
+\end_layout
+
+\begin_layout Section
+Entity Detection
+\end_layout
+
+\begin_layout Subsection
+Named Entities
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What are Named Entities?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+At its core, proper names
+\end_layout
+
+\begin_layout Itemize
+Nowadays generalized to nouns and multi-word expressions within a semantic
+ class
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+200 categories including 
+\begin_inset Quotes eld
+\end_inset
+
+color
+\begin_inset Quotes erd
+\end_inset
+
+ which contain common nouns
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Useful outside IE
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reduce the vocabulary space, instead of every name of every person have
+ a token 
+\begin_inset Quotes eld
+\end_inset
+
+NAME_OF_PERSON
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Example NEs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+[Fred Flintstone]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{person}}$
+\end_layout
+
+\end_inset
+
+ was named [CTO]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{position}}$
+\end_layout
+
+\end_inset
+
+ of [Time Bank Inc.]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{organization}}$
+\end_layout
+
+\end_inset
+
+ in [2031]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{date}}$
+\end_layout
+
+\end_inset
+
+ .
+ The [next year] [he] got married and became [CEO]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{position}}$
+\end_layout
+
+\end_inset
+
+ of [Dinosaur Savings & Loan]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^{
+\backslash
+textrm{organization}}$
+\end_layout
+
+\end_inset
+
+ .
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NE in the Context of IE
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+NEs are the entries in the DB
+\end_layout
+
+\begin_layout Itemize
+Events are the DB schema
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Named Entity Recognition Techniques
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We will discuss them in class 2 (tomorrow)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Regular Expressions
+\end_layout
+
+\begin_layout Itemize
+Lists of names (gazzetteers) 
+\end_layout
+
+\begin_layout Itemize
+Machine learning
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Regular Expressions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regular Expressions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Regular Expressions are a succint way to encode an automaton that accepts
+ a regular language
+\end_layout
+
+\begin_layout Itemize
+Constructs:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+literal (e.g.
+ /RÉSOLU/)
+\end_layout
+
+\begin_layout Itemize
+character class (e.g., /[0-9]/)
+\end_layout
+
+\begin_layout Itemize
+quantifiers (e.g., /,?/)
+\end_layout
+
+\begin_layout Itemize
+groups (e.g., /([0-9][0-9][0-9])/)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+RE: Literal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Literals are characters or sequences of characters that need to be matched
+ verbatim
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In perl code from the baseline: /(concernant)/
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Characters that have a meaning in the RE language (e.g., '?') need to be escaped
+ (e.g., '
+\backslash
+?')
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In Java you will need to double escape (e.g., 
+\begin_inset Quotes eld
+\end_inset
+
+
+\backslash
+
+\backslash
+?
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Special quotation to escape unknown sequences: 
+\backslash
+E ...
+ 
+\backslash
+Q
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In perl code from the baseline: /
+\backslash
+Q$amount
+\backslash
+E
+\backslash
+spour/
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+RE: Character Classes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Succint way to describe a set of characters
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Either by listing all members (e.g, /[xyz]/)
+\end_layout
+
+\begin_layout Itemize
+Or by using a range (e.g., /[0-9]/)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+There are also patterns for most common sets
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+/
+\backslash
+d/ for digits
+\end_layout
+
+\begin_layout Itemize
+/
+\backslash
+s/ for white space
+\end_layout
+
+\begin_layout Itemize
+special class /./ that matches any character
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+RE: Quantifiers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Extend the smaller regular recursively
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+? one or nothing 
+\end_layout
+
+\begin_layout Description
+* nothing, one or more
+\end_layout
+
+\begin_layout Description
++ one or more
+\end_layout
+
+\begin_layout Description
+{n,m} at lest n, at most m
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+From perl baseline /.*RÉSOLU À L'UNANIMITÉ:/
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+RE: Groups
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Concatenate other regular expressions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+/concernant?
+\backslash
+spour/ means the t is optional!
+\end_layout
+
+\begin_layout Itemize
+/(concernant)?
+\backslash
+spour/ means concernant is optional
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The regular expressions inside a group could be of any complexity, including
+ groups
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+/(concertnant
+\backslash
+s)?pour/
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+By default groups are capturing which means the match is returned by the
+ system
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Non-capturing groups are indicated with ?:
+\end_layout
+
+\begin_layout Itemize
+/(?:concernant
+\backslash
+s)?pour/
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+RE: Alternatives
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Indicates two or more regular expressions could be matched
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+/((du
+\backslash
+scontrat
+\backslash
+sde)|(requis
+\backslash
+spour)|(concernant)/
+\end_layout
+
+\begin_layout Itemize
+Character classes are a succint way to representing many alternatives
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Watch out the need for grouping
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+/du
+\backslash
+scontrat
+\backslash
+sde|requis
+\backslash
+spour/ means (du
+\backslash
+scontrat
+\backslash
+sd)[er](equis
+\backslash
+spour) which is not what you want
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Amount RE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+/(
+\backslash
+d?
+\backslash
+d?(?:
+\backslash
+s?|
+\backslash
+.?)
+\backslash
+d{3}(?:
+\backslash
+s?|,?)(?:
+\backslash
+d{3})?(?:
+\backslash
+,
+\backslash
+d{2})?
+\backslash
+s?
+\backslash
+$)/
+\end_layout
+
+\begin_layout Itemize
+(
+\backslash
+d?
+\backslash
+d? // two digits (optional)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(?:
+\backslash
+s?|
+\backslash
+.?) // a space or a period (optional)
+\end_layout
+
+\begin_layout Itemize
+
+\backslash
+d{3} // three digits (required)
+\end_layout
+
+\begin_layout Itemize
+(?:
+\backslash
+s?|,?) // a space or a period (optional)
+\end_layout
+
+\begin_layout Itemize
+(?:
+\backslash
+d{3})? // three digits (optional)
+\end_layout
+
+\begin_layout Itemize
+(?:
+\backslash
+,
+\backslash
+d{2})? // an optional comma followed by two digits
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\backslash
+s?
+\backslash
+$) // an optional space with a required dollar sign
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Machine Learning
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What is Machine Learning? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A new way of programming 
+\end_layout
+
+\begin_layout Itemize
+Magic! 
+\end_layout
+
+\begin_layout Itemize
+Leaving part of the behavior of your program to be specified by calculating
+ unknown numbers from "data"
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two phases of execution: 
+\begin_inset Quotes eld
+\end_inset
+
+training
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+application
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The ultimate TDD
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If you're using a library, you almost do no coding, just test! 
+\end_layout
+
+\begin_layout Itemize
+But every time you test, your data becomes more and more obsolete 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No peeking!
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Have met people who didn't have any tests and considered 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bugs in the code same are the same as model issues
+\end_layout
+
+\begin_layout Itemize
+My experience has been quite the opposite, the code you write on top of
+ machine learning algorithms has to be double and triple checked
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Taxonomy of Machine Learning Approaches
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Supervised learning 
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+
+\shape italic
+Monkey see, monkey do
+\end_layout
+
+\begin_layout Itemize
+Classification 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Unsupervised learning
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+
+\shape italic
+Do I look fat?
+\end_layout
+
+\begin_layout Itemize
+Clustering 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Others
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reinforcement learning: learning from past successes and mistakes (good
+ for game AIs and politicians)
+\end_layout
+
+\begin_layout Itemize
+Active learning: asking what you don't know (needs less data)
+\end_layout
+
+\begin_layout Itemize
+Semi-supervised: annotated + raw data
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Concepts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trying to learn a function 
+\begin_inset Formula $f(x_{1},\ldots,x_{n})\rightarrow y$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ are the 
+\series bold
+input
+\series default
+ features.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $y$
+\end_inset
+
+ is the 
+\series bold
+target
+\series default
+ class.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The key here is 
+\shape italic
+extrapolation
+\shape default
+, that is, we want our learned function to 
+\series bold
+generalize
+\series default
+ to unseen inputs.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linear interpolation is on itself a type of supervised learning.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Data
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Collecting the data
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Data collection hooks
+\end_layout
+
+\begin_layout Itemize
+Annotating data
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Annotation guidelines
+\end_layout
+
+\begin_layout Itemize
+Cross and self agreement
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Representing the data (as 
+\series bold
+features
+\series default
+, more on this later)
+\end_layout
+
+\begin_layout Itemize
+Understanding how well the system operates over the data
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Testing on 
+\series bold
+unseen
+\series default
+ data
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A DB is a rather poor ML algorithm
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Make sure your system is not just memorizing the data
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Freedom
+\begin_inset Quotes erd
+\end_inset
+
+ of the model
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluating
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Held out data
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Make sure the held out is representative of the problem and the overall
+ population of instances you want to apply the classifier
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Repeated experiments
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Every time you run something on eval data, it changes you!
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Cross-validation
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Training and testing on the same data but not quite
+\end_layout
+
+\begin_layout Itemize
+data = {A,B,C}
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+train in A,B, test in C
+\end_layout
+
+\begin_layout Itemize
+train in A,C, test in B
+\end_layout
+
+\begin_layout Itemize
+train in B,C, test in A
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Metrics
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Measuring how many times a classifier outputs the right answer (
+\begin_inset Quotes eld
+\end_inset
+
+accuracy
+\begin_inset Quotes erd
+\end_inset
+
+) is not enough
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Many interesting problems are very biased towards a background class
+\end_layout
+
+\begin_layout Itemize
+If 95% of the time something doesn't happen, saying it'll never happen (not
+ a very useful classifier!) will make you only 5% wrong
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Metrics:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+{\displaystyle precision}=\dfrac{\left|{\displaystyle correctly}\;tagged\right|}{\left|tagged\right|}=\dfrac{tp}{tp+fp}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+{\displaystyle recall}=\dfrac{\left|{\displaystyle correctly}\;tagged\right|}{\left|{\displaystyle should\;be\;tagged}\right|}=\dfrac{tp}{tp+fn}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+{\displaystyle F}=2\cdot\dfrac{P\cdot R}{P+R}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Naive Bayes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Count and multiply
+\end_layout
+
+\begin_layout Itemize
+How spam filters work
+\end_layout
+
+\begin_layout Itemize
+Very easy to implement
+\end_layout
+
+\begin_layout Itemize
+Works relatively well but it can seldom solve the problem completely
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If you add the target class as a feature, it will still has a high error
+ rate
+\end_layout
+
+\begin_layout Itemize
+It never 
+\begin_inset Quotes eld
+\end_inset
+
+trusts
+\begin_inset Quotes erd
+\end_inset
+
+ anything too much
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why Naive?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bayes Rule
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p\left(C\mid F_{1},\ldots,F_{n}\right)=\dfrac{p\left(C\right)p\left(F_{1},\ldots,F_{n}\mid C\right)}{p\left(F_{1},\ldots,F_{n}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+{\textstyle posterior}=\dfrac{{\textstyle prior}\times{\textstyle likelihood}}{{\displaystyle evidence}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Naive Part
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Independence assumption of the 
+\begin_inset Formula $F_{x}$
+\end_inset
+
+, that is 
+\begin_inset Formula $p\left(F_{i}\mid C,F_{j}\right)=p\left(F_{i}\mid C\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p\left(C|F_{1},\ldots,F_{n}\right)\propto p\left(C\right)p\left(F_{1}\mid C\right)\ldots p\left(F_{n}\mid C\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maximum Entropy
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tons and tons of (binary) features
+\end_layout
+
+\begin_layout Itemize
+Very popular at beginning of 2000's
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CRF has taken some of its glamour
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Mature code
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+OpenNLP MaxEnt uses strings to represent its input data
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+
+\size scriptsize
+previous=succeeds current=Terrence next=D.
+ currentWordIsCapitalized 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Training with 
+\family typewriter
+\size scriptsize
+trainModel(dataIndexer, iterations)
+\family default
+\size default
+ and using it with 
+\family typewriter
+\size scriptsize
+double[] eval(String[] context)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maximum Entropy Details
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A maximum entropy classifier is a multi-class generalization of a logistic
+ regression, so we will discuss them instead
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Multi-class can be obtained by a number of techniques, e.g., using a pivot
+ class
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Related to Naive Bayes if we think of it as not estimating the probability
+ of the features given the class, but the probability of the class given
+ the features directly
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So we don't need to make an independence assumption between the features
+ anymore
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Linear_regression.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $y_{i}=\beta_{1}x_{i1}+\cdots+\beta_{p}x_{ip}+\varepsilon_{i}=\mathbf{x}_{i}^{{\rm T}}\boldsymbol{\beta}+\varepsilon_{i},\qquad i=1,\ldots,n$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Least-squares Estimation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Representing the problem as 
+\begin_inset Formula $\mathbf{y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\varepsilon}$
+\end_inset
+
+ where
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\mathbf{y}=\begin{pmatrix}y_{1}\\
+y_{2}\\
+\vdots\\
+y_{n}
+\end{pmatrix},\quad\mathbf{X}=\begin{pmatrix}\mathbf{x}_{1}^{{\rm T}}\\
+\mathbf{x}_{2}^{{\rm T}}\\
+\vdots\\
+\mathbf{x}_{n}^{{\rm T}}
+\end{pmatrix}=\begin{pmatrix}x_{11} & \cdots & x_{1p}\\
+x_{21} & \cdots & x_{2p}\\
+\vdots & \ddots & \vdots\\
+x_{n1} & \cdots & x_{np}
+\end{pmatrix},\quad\boldsymbol{\beta}=\begin{pmatrix}\beta_{1}\\
+\beta_{2}\\
+\vdots\\
+\beta_{p}
+\end{pmatrix},\quad\boldsymbol{\varepsilon}=\begin{pmatrix}\varepsilon_{1}\\
+\varepsilon_{2}\\
+\vdots\\
+\varepsilon_{n}
+\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+a closed solution for
+\begin_inset Formula $\beta$
+\end_inset
+
+ is given by:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\hat{\boldsymbol{\beta}}=(\mathbf{X}^{{\rm T}}\mathbf{X})^{-1}\mathbf{X}^{{\rm T}}\mathbf{y}=\big(\,{\textstyle \sum}\mathbf{x}_{i}\mathbf{x}_{i}^{{\rm T}}\,\big)^{-1}\big(\,{\textstyle \sum}\mathbf{x}_{i}y_{i}\,\big)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Logistic Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Logistic-curve.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $F(t)=\frac{e^{t}}{e^{t}+1}=\frac{1}{1+e^{-t}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Logistic Regression: Intuition
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We move from the target function space to the probability space for the
+ target function being on a certain class
+\end_layout
+
+\begin_layout Itemize
+Minimize the error for a linear combination of features approximating the
+ logit of the said probability
+\end_layout
+
+\begin_layout Itemize
+No close solution, use numerical methods to find an approximate solution
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Logistic Regression, estimating 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{align} Y_i
+\backslash
+mid x_{1,i},
+\backslash
+ldots,x_{m,i} 
+\backslash
+ & 
+\backslash
+sim  
+\backslash
+operatorname{Bernoulli}(p_i) 
+\backslash
+
+\backslash
+ 
+\backslash
+mathbb{E}[Y_i
+\backslash
+mid x_{1,i},
+\backslash
+ldots,x_{m,i}] &= p_i  
+\backslash
+
+\backslash
+ 
+\backslash
+Pr(Y_i=y_i
+\backslash
+mid x_{1,i},
+\backslash
+ldots,x_{m,i}) &= 
+\backslash
+begin{cases} p_i & 
+\backslash
+text{if }y_i=1 
+\backslash
+
+\backslash
+ 1-p_i & 
+\backslash
+text{if }y_i=0 
+\backslash
+end{cases} 
+\backslash
+
+\backslash
+ 
+\backslash
+Pr(Y_i=y_i
+\backslash
+mid x_{1,i},
+\backslash
+ldots,x_{m,i}) &= p_i^{y_i} (1-p_i)^{(1-y_i)} 
+\backslash
+end{align}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ and regression coefficients
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ and the linear combination coefficients are all unknown so we resort to
+ a search process that minimizes the error on training
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathrm{logit}(p_{i})=\ln\left(\frac{p_{i}}{1-p_{i}}\right)=\beta_{0}+\beta_{1}x_{1,i}+\cdots+\beta_{m}x_{m,i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Need some regularization process to avoid trivial or overtly complex solutions
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How to Come Up with Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Throw everything (and the kitchen sink) at it
+\end_layout
+
+\begin_layout Enumerate
+Stop and think
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+What information would 
+\series bold
+you
+\series default
+ us to solve that problem?
+\end_layout
+
+\begin_layout Enumerate
+Look for published work
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Papers: http://aclweb.org/anthology-new/
+\end_layout
+
+\begin_layout Itemize
+Blog postings
+\end_layout
+
+\begin_layout Itemize
+Open source projects
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Add computable features
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Learning to sum takes an incredible amount of training!
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Improving the Classifier
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+More data
+\end_layout
+
+\begin_layout Itemize
+Better features
+\end_layout
+
+\begin_layout Itemize
+Solve a different problem
+\end_layout
+
+\begin_layout Itemize
+Shop around for a different classifier / parametrization
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Procedural overfitting
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Add unlabelled data
+\end_layout
+
+\begin_layout Itemize
+Drop ML and program it by hand
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+NE Detection
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+20 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NE Detection
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dictionary-based
+\end_layout
+
+\begin_layout Itemize
+WSD
+\end_layout
+
+\begin_layout Itemize
+Semi-supervised
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Dictionary-based (Gazetteers)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paper-260
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Gazzetteers and their problems
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Spurious matches
+\end_layout
+
+\begin_layout Itemize
+In Octroy, 
+\begin_inset Quotes eld
+\end_inset
+
+La Firme
+\begin_inset Quotes erd
+\end_inset
+
+ was in some moment the name of a company
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Same with 
+\begin_inset Quotes eld
+\end_inset
+
+CE
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+need annotated corpus for evaluation, otherwise more rules hurt performance
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simple Rules
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+All capitalized sequences that end in 
+\begin_inset Quotes eld
+\end_inset
+
+Inc.
+\begin_inset Quotes erd
+\end_inset
+
+ are companies
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Work well as a starting point
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Need annotated corpus for evaluation, otherwise more rules hurt performance
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+WSD-based
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The context around an occurrence determines its function
+\end_layout
+
+\begin_layout Itemize
+If we can segment the text around likely NEs, we can then use the context
+ to determine its type
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Biology: Problem
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Disambiguating proteins, genes, and RNA in text: a machine learning approach,
+\begin_inset Quotes erd
+\end_inset
+
+ Hatzivassiloglou, Duboue, Rzhetsky (2001)
+\end_layout
+
+\begin_layout Itemize
+The same term refers to genes, proteins and mRNA:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+“By UV cross-linking and immunoprecipitation, we show that 
+\series bold
+SBP2
+\series default
+ specifically 
+\emph on
+binds
+\emph default
+ selenoprotein 
+\emph on
+mRNAs
+\emph default
+ both in vitro and in vivo.” 
+\end_layout
+
+\begin_layout Itemize
+“The 
+\series bold
+SBP2
+\series default
+ 
+\emph on
+clone
+\emph default
+ used in this study generates a 3173 nt transcript (2541 nt of coding sequence
+ plus a 632 nt 3’ UTR truncated at the polyadenylation site).” 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This ambiguity is so pervasive that in many cases the author of the text
+ inserts the word 
+\begin_inset Quotes eld
+\end_inset
+
+gene
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+protein
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+mRNA
+\begin_inset Quotes erd
+\end_inset
+
+ to disambiguate it itself
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+That happens in only 2.65% of the cases though
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Biology: Features
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Take a context around the term, use the occurrence of words before or after
+ the term as features.
+\end_layout
+
+\begin_layout Itemize
+Keep a tally of the number of times each word has appear with which target
+ class:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+term
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gene
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+protein
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+mRNA
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PRIORS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.44
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.14
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+D-PHE-PRO-VAL-ORN-LEU 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+NOVAGEN 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.46
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.46
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.08
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+GLCNAC-MAN
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+REV-RESPONSIVE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+EPICENTRE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+GENEROUSLY 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.33
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.67
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Biology: Methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Instead of multiplying, operate on logs
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+float[] predict = (float[]) priors.clone();
+\end_layout
+
+\begin_layout Plain Layout
+
+// ...
+ for each word in context ...
+\end_layout
+
+\begin_layout Plain Layout
+
+if (wordfreqs.containsKey(word))  {
+\end_layout
+
+\begin_layout Plain Layout
+
+  float[] logfreqs = wordfreqs.get(word);
+\end_layout
+
+\begin_layout Plain Layout
+
+  for (int i = 0; i < predict.length; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    predict[i] += logfreqs[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Biology: Results
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Used a number of variations on the features
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Removed capitalization, stemming, filtered part-of-speech, added positional
+ information
+\end_layout
+
+\begin_layout Itemize
+Changed the problem from three-way to two-way classification
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Results of Tree-learning and Naive Bayes were comparable (76% two-way and
+ 67% three-way).
+\end_layout
+
+\begin_layout Itemize
+Distilled some interesting rules from the decision trees:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+after ENCODES is present 
+\begin_inset Newline newline
+\end_inset
+
+before ENCODES is NOT present 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+class gene [96.5%]
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sequence Tagging (IOB)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given 
+\begin_inset Formula $n$
+\end_inset
+
+-tags, create 
+\begin_inset Formula $2n+1$
+\end_inset
+
+ classes:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+B-tag: this word starts a tag
+\end_layout
+
+\begin_layout Itemize
+I-tag: this word is inside a tag
+\end_layout
+
+\begin_layout Itemize
+O: this word is outside all tags (background model)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Learn a classifier that goes from features around a word to these classes
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IOB Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+From WNUT NET competition
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+tonite O
+\end_layout
+
+\begin_layout Itemize
+" O
+\end_layout
+
+\begin_layout Itemize
+running B-tvshow
+\end_layout
+
+\begin_layout Itemize
+wit I-tvshow
+\end_layout
+
+\begin_layout Itemize
+mjd I-tvshow
+\end_layout
+
+\begin_layout Itemize
+" O
+\end_layout
+
+\begin_layout Itemize
+live O
+\end_layout
+
+\begin_layout Itemize
+from O
+\end_layout
+
+\begin_layout Itemize
+7- O
+\end_layout
+
+\begin_layout Itemize
+9pm O
+\end_layout
+
+\begin_layout Itemize
+eastern O
+\end_layout
+
+\begin_layout Itemize
+sirius B-company
+\end_layout
+
+\begin_layout Itemize
+211 O
+\end_layout
+
+\begin_layout Itemize
+.
+ O
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bootstrapping (Semisupervised)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Use a seed set of entities to collect contexts around them on a corpus
+\end_layout
+
+\begin_layout Itemize
+Apply the trained system to the corpus, collect more entities
+\end_layout
+
+\begin_layout Itemize
+Repeat until no more entities are found
+\end_layout
+
+\begin_layout Itemize
+As described, never seen working in practice
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Need to clean the list of extracted entities by hand after each iteration
+ or it ends up annotating everything
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can be improved using co-training: using an alternative view of the data
+ as a separate classifier (different features or different corpus or different
+ approach)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Annotating Entities
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Interesting entities are rare, if you annotate a random sample you will
+ need to annotate a very large number of documents to achieve coverage
+\end_layout
+
+\begin_layout Itemize
+Alternative: Active Learning, let the trained system pick new things to
+ annotate
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Problem is that your system will be biased towards rare cases, need to weight
+ the training samples
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Guidelines are usually straightforward to follow
+\end_layout
+
+\begin_layout Itemize
+Problems: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Systematic polysemy (GPE vs location)
+\end_layout
+
+\begin_layout Itemize
+Corpus characterization (training on certain data, applying on different
+ one)
+\end_layout
+
+\begin_layout Itemize
+Tags missing / spurious / partial match
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Entity Linking
+\end_layout
+
+\begin_layout Subsection
+Entity Linking
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+20 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Entity Linking
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Determine which occurrences refer to which entity
+\end_layout
+
+\begin_layout Itemize
+Need a corpus of disambiguated references or at least text related to each
+ entity
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+In-Document Linking
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In-document coreference
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Pronouns detection is good (80-90%)
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+[Fred Flintstone]
+\color inherit
+ was named CTO of Time Bank Inc.
+ in 2031.
+ The next year 
+\color blue
+[he]
+\color inherit
+ ...
+\end_layout
+
+\begin_layout Itemize
+Nouns coreference is not that good
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Subsection
+DBpedia Spotlight
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Open Data Taxonomies
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+DBpedia
+\end_layout
+
+\begin_layout Itemize
+Extracted from Wikipedia Info Boxes
+\end_layout
+
+\begin_layout Itemize
+RDF triples
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DBpedia Spotlight
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename dbpedia-spotlight.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+from 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://dbpedia-spotlight.github.io/demo/"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+End-to-End Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Entity Linking in the End-to-End Case Study
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Continuing with the Octroy Pipeline, we will analyze code in branch class2
+ of
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+https://github.com/IE4OpenData/Octroy
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Entities
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Amount
+\end_layout
+
+\begin_layout Itemize
+Company
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Linking
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We use ConceptMapper with the NEQ code as a field in the dictionary
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Types
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+DocumentAnnotation
+\end_layout
+
+\begin_layout Itemize
+Token
+\end_layout
+
+\begin_layout Itemize
+Sentence
+\end_layout
+
+\begin_layout Itemize
+Amount
+\end_layout
+
+\begin_layout Itemize
+Company
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The AEs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ContractClassifier
+\end_layout
+
+\begin_layout Itemize
+ContractFlowController
+\end_layout
+
+\begin_layout Itemize
+AmountAnnotator
+\end_layout
+
+\begin_layout Itemize
+NeqConceptMapper
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ContractClassifier works well
+\end_layout
+
+\begin_layout Itemize
+ConceptMapper produces too many spurious matches
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Add ML
+\end_layout
+
+\begin_layout Itemize
+Filter dictionary through general purpose corpus
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Results (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename neq1.png
+	height 6cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Results (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename neq2.png
+	height 6cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Results (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename neq3.png
+	height 6cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
