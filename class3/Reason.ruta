@@ -1,0 +1,19 @@
+PACKAGE org.ie4opendata.octroy;
+
+TYPESYSTEM org.ie4opendata.octroy.octroy_types;
+
+ENGINE org.ie4opendata.octroy.OctroyFixedEngine;
+
+DECLARE CompanyTrailing;
+WORDLIST CompanyTrailingList = 'org/ie4opendata/octroy/company_trailings.txt';
+
+Document{-> EXEC(OctroyFixedEngine)};
+
+Document{-> MARKFAST(CompanyTrailing, CompanyTrailingList)};
+
+CW+ @CompanyTrailing{->MARK(Company,1,2)};
+
+"la" "firme" W+{-CONTAINS(CompanyTrailing)} CompanyTrailing{->MARK(Company,3,4)};
+
+
+Company "concernant" ANY[2,50]{-REGEXP("[.,;]")->MARK(Reason)};

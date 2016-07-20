@@ -1,0 +1,2644 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usepackage{listings}
+\usetheme{Malmoe}
+\usecolortheme{wolverine}
+% or ...
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Copyright 2016 by Pablo Duboue <pablo.duboue@gmail.com>.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+All content otherwise stated is licensed under CC-BY-SA.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Hybrid Information Extraction Systems
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ECI2016T2-class3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+Class 3: Rule-Based IE
+\end_layout
+
+\begin_layout Author
+Pablo Ariel Duboue, PhD
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+© 2016 Pablo Duboue, bajo licencia CC-BY-SA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+30va Escuela de Ciencias Informaticas (ECI)
+\begin_inset Newline newline
+\end_inset
+
+Facultad de Cs.
+ Exactas y Naturales UBA
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Si quieres descubrir todo en modo paso a paso, descomenta el siguiente comando:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Rule-Based IE
+\end_layout
+
+\begin_layout Subsection
+Rule-Based IE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why Rules?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Understandable
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Debuggable
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Continuous Quality Improvement
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Key: Rule Language
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two approaches:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Regular Expressions
+\end_layout
+
+\begin_layout Enumerate
+Wrapper-induction
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{Example}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=1,language=java]
+\end_layout
+
+\begin_layout Plain Layout
+
+// his father was
+\end_layout
+
+\begin_layout Plain Layout
+
+Rule: relative_parent2
+\end_layout
+
+\begin_layout Plain Layout
+
+(
+\end_layout
+
+\begin_layout Plain Layout
+
+  ({Person})+ :person_self
+\end_layout
+
+\begin_layout Plain Layout
+
+  ({Token.string == "father"} | {Token.string == "mother"})
+\end_layout
+
+\begin_layout Plain Layout
+
+  ({Token.string == ","})*
+\end_layout
+
+\begin_layout Plain Layout
+
+  ({Person})+ :person_parent
+\end_layout
+
+\begin_layout Plain Layout
+
+  ({Token.string == ","})*
+\end_layout
+
+\begin_layout Plain Layout
+
+  {Token.string == "was"}
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+-->
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    progenie.L.addFact("c-relative",
+\end_layout
+
+\begin_layout Plain Layout
+
+       new Object[]{"person_self",
+\end_layout
+
+\begin_layout Plain Layout
+
+         progenie.L.getClassStrings(inputAS,bindings,"person_self")},
+\end_layout
+
+\begin_layout Plain Layout
+
+       new Object[]{"person_parent",
+\end_layout
+
+\begin_layout Plain Layout
+
+         progenie.L.getClassStrings(inputAS,bindings,"person_parent")}); 
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rule Drawbacks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Costly
+\end_layout
+
+\begin_layout Itemize
+Evaluation still requires annotation
+\end_layout
+
+\begin_layout Itemize
+Tempting of not doing any annotation
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Big mistake
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Regular Expression Rules for IE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+15 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regular Expression Rules for IE
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+REs are quintessential CS
+\end_layout
+
+\begin_layout Itemize
+REs over types seems the right tool for the job
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{R.E.
+ Rules Example}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=1,language=java]
+\end_layout
+
+\begin_layout Plain Layout
+
+Phase: ProGenIE                                                        
+                                  
+\end_layout
+
+\begin_layout Plain Layout
+
+Input: THEME TARGET LOCATION
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Rule: r1
+\end_layout
+
+\begin_layout Plain Layout
+
+(
+\end_layout
+
+\begin_layout Plain Layout
+
+  ({THEME}) :person
+\end_layout
+
+\begin_layout Plain Layout
+
+  {TARGET.string == "born"}
+\end_layout
+
+\begin_layout Plain Layout
+
+  ({LOCATION}) :loc
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+-->
+\end_layout
+
+\begin_layout Plain Layout
+
+{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    System.out.println("Born event");
+\end_layout
+
+\begin_layout Plain Layout
+
+    gate.AnnotationSet person = (gate.AnnotationSet)bindings.get("person");
+\end_layout
+
+\begin_layout Plain Layout
+
+    gate.AnnotationSet loc = (gate.AnnotationSet)bindings.get("loc");
+\end_layout
+
+\begin_layout Plain Layout
+
+    System.out.println("Person:"+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+      ((Annotation)person.iterator().next()).getFeatures().get("string"));
+\end_layout
+
+\begin_layout Plain Layout
+
+    System.out.println("Loc:"+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+      ((Annotation)loc.iterator().next()).getFeatures().get("string"));
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+JAPE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The Java Annotations Pattern Engine
+\end_layout
+
+\begin_layout Itemize
+Regular Expressions (finite state transduction) over GATE annotations.
+\end_layout
+
+\begin_layout Itemize
+DSL with rules:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+LHS with patterns over annotations and their features
+\end_layout
+
+\begin_layout Itemize
+RHS is Java code (compiled on-the-fly using tools.jar in the JDK distribution)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+target "https://gate.ac.uk/sale/thakker-jape-tutorial/index.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{Example}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=1,language=java]
+\end_layout
+
+\begin_layout Plain Layout
+
+Phase: Event                                                           
+                                  
+\end_layout
+
+\begin_layout Plain Layout
+
+Input: Token Lookup Location Organization Date JobTitle Person
+\end_layout
+
+\begin_layout Plain Layout
+
+Options: control=appelt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Rule: e_r1
+\end_layout
+
+\begin_layout Plain Layout
+
+( ({Token.category == "DT"})?
+\end_layout
+
+\begin_layout Plain Layout
+
+  (({Organization})+)?
+\end_layout
+
+\begin_layout Plain Layout
+
+  ( ({Token.category == "JJ"})*
+\end_layout
+
+\begin_layout Plain Layout
+
+    ({Token.string == "chemical"}{Token.string == "weapons"})
+\end_layout
+
+\begin_layout Plain Layout
+
+    ({Token.string == "actions"}|{Token.string == "action"}|
+\end_layout
+
+\begin_layout Plain Layout
+
+     {Token.string == "attacks"}|{Token.string == "attack"})
+\end_layout
+
+\begin_layout Plain Layout
+
+  )
+\end_layout
+
+\begin_layout Plain Layout
+
+  {Token.string == "against"}
+\end_layout
+
+\begin_layout Plain Layout
+
+  ({Token.category == "DT"})?
+\end_layout
+
+\begin_layout Plain Layout
+
+  (({Location})+|
+\end_layout
+
+\begin_layout Plain Layout
+
+   ({Organization})+|
+\end_layout
+
+\begin_layout Plain Layout
+
+   (({Lookup.majorType == citizenship})+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    ({Token.string == "forces"}|{Token.string == "force"}|{Token.string ==
+ "army"}|
+\end_layout
+
+\begin_layout Plain Layout
+
+    {Token.string == "troops"}|{Token.string == "soldiers"}|{Token.string ==
+ "nationals"}|
+\end_layout
+
+\begin_layout Plain Layout
+
+    {Token.string == "interests"}|{Token.string == "citizens"}|{Token.string
+ == "embassy"}|
+\end_layout
+
+\begin_layout Plain Layout
+
+    {Token.string == "embassies"}|{Token.string == "consulate"}|{Token.string
+ == "consulates"}|
+\end_layout
+
+\begin_layout Plain Layout
+
+    {Token.string == "diplomat"}|{Token.string == "diplomats"}))|
+\end_layout
+
+\begin_layout Plain Layout
+
+   (({Location})+ {Token.string == "'s"}
+\end_layout
+
+\begin_layout Plain Layout
+
+    {Token.string == "secret"}{Token.string == "service"}{Token.string == "headquar
+ters"})
+\end_layout
+
+\begin_layout Plain Layout
+
+   ):target
+\end_layout
+
+\begin_layout Plain Layout
+
+  ( {Token.string == "in"} (({Location})+) :place )?
+\end_layout
+
+\begin_layout Plain Layout
+
+  ( ({Token.string == "in"}|{Token.string == "during"}) (({Date})+) :date
+ )?
+\end_layout
+
+\begin_layout Plain Layout
+
+):event --> { /* ...
+ */ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+RefO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Regular Expressions for Objects
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Developed in Cordoba by Machinalis
+\end_layout
+
+\begin_layout Itemize
+Python
+\end_layout
+
+\begin_layout Itemize
+The base of one of the IEPy subsystems
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/machinalis/refo/"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{RefO Example}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=python,
+\end_layout
+
+\begin_layout Plain Layout
+
+basicstyle=
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                keywordstyle=
+\backslash
+color{blue}
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                commentstyle=
+\backslash
+color{red}
+\backslash
+ttfamily}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=1,language=python]
+\end_layout
+
+\begin_layout Plain Layout
+
+class W(Predicate):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, token=".*", pos=".*"):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.token = re.compile(token + "$")
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.pos = re.compile(pos + "$")
+\end_layout
+
+\begin_layout Plain Layout
+
+        super(W, self).__init__(self.match)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def match(self, word):
+\end_layout
+
+\begin_layout Plain Layout
+
+        m1 = self.token.match(word.token)
+\end_layout
+
+\begin_layout Plain Layout
+
+        m2 = self.pos.match(word.pos)
+\end_layout
+
+\begin_layout Plain Layout
+
+        return m1 and m2
+\end_layout
+
+\begin_layout Plain Layout
+
+rules = [
+\end_layout
+
+\begin_layout Plain Layout
+
+    Rule(condition=W(pos="NUMBER") + W(pos="UNITS_FEET"),
+\end_layout
+
+\begin_layout Plain Layout
+
+         action=feet_to_mt),
+\end_layout
+
+\begin_layout Plain Layout
+
+    Rule(condition=Plus(W(token="[^A-Z].*", pos="NNP")),
+\end_layout
+
+\begin_layout Plain Layout
+
+         action=capitalize_name),
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sentence = "My|PRP friend|NN john|NNP smith|NNP is|VBZ 2|NUMBER " +
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+           "feet|UNITS_FEET taller|JJR than|IN mary|NNP Jane|NNP"
+\end_layout
+
+\begin_layout Plain Layout
+
+sentence = [Word(*x.split("|")) for x in sentence.split()]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for rule in rules:
+\end_layout
+
+\begin_layout Plain Layout
+
+  rule.apply(sentence)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IEPy
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A framework for building Information Extraction systems using two approaches:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Active Learning (annotate and learn, no coding necessary)
+\end_layout
+
+\begin_layout Itemize
+Rule-based (using RefO)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Developed by Machinalis in collaboration with the NLP Group at UNC-FaMAF
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/machinalis/iepy"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{IEPy Example}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=python,
+\end_layout
+
+\begin_layout Plain Layout
+
+basicstyle=
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                keywordstyle=
+\backslash
+color{blue}
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+                commentstyle=
+\backslash
+color{red}
+\backslash
+ttfamily}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[firstnumber=1,language=python]
+\end_layout
+
+\begin_layout Plain Layout
+
+@rule(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+def born_date_in_parenthesis(Subject, Object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    Ex: Gary Sykes (Born 13 February 1984) is a British super featherweight
+ boxer.
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    anything = Star(Any())
+\end_layout
+
+\begin_layout Plain Layout
+
+    born = Star(Pos(":")) + Question(Token("Born") | Token("born")) + 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      Question(Token("c."))
+\end_layout
+
+\begin_layout Plain Layout
+
+    entity_leftover = Star(Pos("NNP"))
+\end_layout
+
+\begin_layout Plain Layout
+
+    return Subject + entity_leftover + Pos("-LRB-") + born + Object + Pos("-RRB-
+") + 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+           anything
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@rule(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+def born_two_dates_in_parenthesis(Subject, Object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    Ex: James Cunningham (born 1973 or 1974) is a Canadian stand-up comedian
+ and 
+\end_layout
+
+\begin_layout Plain Layout
+
+        TV host.
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    anything = Star(Any())
+\end_layout
+
+\begin_layout Plain Layout
+
+    born = Question(Token("Born") | Token("born"))
+\end_layout
+
+\begin_layout Plain Layout
+
+    entity_leftover = Star(Pos("NNP"))
+\end_layout
+
+\begin_layout Plain Layout
+
+    subject = Subject + entity_leftover
+\end_layout
+
+\begin_layout Plain Layout
+
+    or_object = (Object + Token("or") + Pos("CD") |
+\end_layout
+
+\begin_layout Plain Layout
+
+                 Pos("CD") + Token("or") + Object)
+\end_layout
+
+\begin_layout Plain Layout
+
+    return subject + Pos("-LRB-") + born + or_object + Pos("-RRB-") + anything
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Drawbacks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Corner cases will kill your program
+\end_layout
+
+\begin_layout Itemize
+They work, and there are competing approaches
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Anchor-based Rules for IE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+15 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Anchor-based Rules for IE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Alternative to transducing the whole sequence of characters / tokens / annotatio
+ns
+\end_layout
+
+\begin_layout Itemize
+Identify key elements that are rare enough and reliable as a start for processin
+g
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Anchors
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Structure the processing around further conditions around these elements
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The context around the anchor can then be modeled using REs
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Wrapper Induction
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Anchor-based IE is rooted in Nicholas Kushmeric thesis from 1997 UW
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Wrapper Induction for Information Extraction
+\end_layout
+
+\begin_layout Itemize
+The wrapper induction uses inductive learning
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Learning to extract information from Web pages
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kushmeric uses 
+\begin_inset Quotes eld
+\end_inset
+
+Information Extraction
+\begin_inset Quotes erd
+\end_inset
+
+ to refer to what we now call Web scraping
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-285-fig4.1a.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+from Kushmeric (1997), Figure 4.1 (a)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Apache RuTA
+\end_layout
+
+\begin_layout Subsection
+Apache RuTA
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+30 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+RuTA at Length
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Slides from GSCL 2013 by Peter Klügl
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rule Induction
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rule Induction
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+WHISK
+\end_layout
+
+\begin_layout Itemize
+LP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^2$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generalities
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The key aspect of rule-learning algorithms is the rule-language used
+\end_layout
+
+\begin_layout Itemize
+Many algorithms start from a training instance and generalize it following
+ different criteria
+\end_layout
+
+\begin_layout Itemize
+They then evaluate the different generalizations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Keeping a good balance of generalization power and correctness
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+WHISK
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+\begin_inset Quotes eld
+\end_inset
+
+Learning Information Extraction Rules for Semi-structured and Free Text
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+ by Stephen Soderland (Machine Learning, 1999)
+\end_layout
+
+\begin_layout Itemize
+Simple 
+\begin_inset Quotes eld
+\end_inset
+
+regular expression like
+\begin_inset Quotes erd
+\end_inset
+
+ language (bounded * operator)
+\end_layout
+
+\begin_layout Itemize
+Applicable to both limited IE and Web scraping
+\end_layout
+
+\begin_layout Itemize
+1245 citations
+\end_layout
+
+\begin_layout Itemize
+Algorithm selects which instances to ask for annotation
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+WHISK Rule Language
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Wilcard
+\end_layout
+
+\begin_layout Itemize
+Words or lists of words
+\end_layout
+
+\begin_layout Itemize
+Capture groups
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Words
+\end_layout
+
+\begin_layout Itemize
+Digits
+\end_layout
+
+\begin_layout Itemize
+Numbers
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+* ( Digit ) 'BR' * '$' ( Number )
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Renovated Apt 2BR available imm $2500 OBO
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+WHISK Algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-276-fig12.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+From Soderland (1999), Figure 12
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+LP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^2$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+\begin_inset Quotes eld
+\end_inset
+
+Adaptive Information Extraction from Text by Rule Induction and Generalisation
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+ by Fabio Ciravegna (IJCAI, 2001)
+\end_layout
+
+\begin_layout Itemize
+Learn to insert tags by generalizing examples
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Generalizing using linguistic information
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Part-of-speech
+\end_layout
+
+\begin_layout Itemize
+Lists of terms (e.g., titles)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Open and close tags by separate rules
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Keep only high precision rules
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Improve over less precise rules by keeping context
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+LP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^2$
+\end_layout
+
+\end_inset
+
+ Rule Language
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-270-tab2.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+From Ciravegna (2001), Table 2
+\end_layout
+
+\begin_layout Itemize
+Plus correction rules
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Similar to the base rules but change an existing tag
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+LP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${}^2$
+\end_layout
+
+\end_inset
+
+ Algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-270-fig3.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align right
+From Ciravegna (2001), Figure 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+End-to-End Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+RuTA in the End-to-End Case Study
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Installing RuTA Workbench:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Old version of Eclipse (Mars)
+\end_layout
+
+\begin_layout Itemize
+Set up a sandbox to use with the tooling
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The sandbox project depends on the main (Maven) project
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Copy the rules scripts when satisfied
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Installation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Eclipse > Help > Install New Software...
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename eclipse-ruta-install.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Installation (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+File > New > Project...
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename maven-project.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Installation (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(might need to install egit from m2e marketplace)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename octroy-project.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Installation (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+On checkout, Eclipse might complain the generated clases are not found
+\end_layout
+
+\begin_layout Itemize
+Right click on the project and select Maven in the contextual menu
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Choose 
+\begin_inset Quotes eld
+\end_inset
+
+Update project...
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Use default options
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Switch to RuTA Workbench perspective:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Window > Perspective > Open Perspective > Other...
+ (select UIMA RuTA)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Create sandbox project:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+File > New > UIMA RuTA Project...
+\end_layout
+
+\begin_layout Itemize
+Set name to OctroySandbox
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Set the dependency:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Select the sandbox project and go to Project > Preferences > Project References
+\end_layout
+
+\begin_layout Itemize
+Check octroy
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sandbox Project
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Right click on script folder > New > UIMA RuTA Package
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+org.ie4opendata.octroy
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Open the package and right click on octroy > New > UIMA RuTA File
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reason.ruta
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Copy the dev100 into input
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Types being Extracted
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Implement the baseline reason rules in RuTA
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Rules
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CW+ @CompanyTrailing{->MARK(Company,1,2)};
+\end_layout
+
+\begin_layout Itemize
+"la" "firme" W+{-CONTAINS(CompanyTrailing)} CompanyTrailing{->MARK(Company,3,4)}
+;
+\end_layout
+
+\begin_layout Itemize
+Company "concernant" ANY[2,50]{-REGEXP("[.,;]")->MARK(Reason)};
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+RuTA Workbench has an evaluation environment
+\end_layout
+
+\begin_layout Itemize
+Needs output XMI files
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Executes the script and compare them to the annotated files
+\end_layout
+
+\begin_layout Itemize
+XMI files can be annotated using the UIMA Eclipse tooling
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
