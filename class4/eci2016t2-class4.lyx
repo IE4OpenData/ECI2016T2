@@ -1,0 +1,1800 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{Warsaw}
+\usecolortheme{wolverine}
+% or ...
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Copyright 2016 by Pablo Duboue <pablo.duboue@gmail.com>.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+All content otherwise stated is licensed under CC-BY-SA.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Hybrid Information Extraction Systems
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ECI2016T2-class4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+Class 4: Statistical IE
+\end_layout
+
+\begin_layout Author
+Pablo Ariel Duboue, PhD
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+© 2016 Pablo Duboue, bajo licencia CC-BY-SA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+30va Escuela de Ciencias Informaticas (ECI)
+\begin_inset Newline newline
+\end_inset
+
+Facultad de Cs.
+ Exactas y Naturales UBA
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Si quieres descubrir todo en modo paso a paso, descomenta el siguiente comando:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Statistical IE
+\end_layout
+
+\begin_layout Subsection
+Statistical IE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why Statistical IE?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Cost reduction
+\end_layout
+
+\begin_layout Itemize
+Measurable quality
+\end_layout
+
+\begin_layout Itemize
+Learning analog
+\end_layout
+
+\begin_layout Itemize
+Generalize over training
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example Training Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Type of Models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Maximum Entropy
+\end_layout
+
+\begin_layout Itemize
+Conditional Random Fields
+\end_layout
+
+\begin_layout Itemize
+Generalized Graphical Models
+\end_layout
+
+\begin_layout Itemize
+Deep Learning
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Sequence Tagging
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+20 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sequence Tagging
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Begining-Inside-Out revisited
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+.
+ 
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+lexical the actual lexical item for the current and contextual words
+\end_layout
+
+\begin_layout Description
+dictionary whether the word is in certain word lists (names of companies,
+ countries, states, cities, common first names)
+\end_layout
+
+\begin_layout Description
+shape the ortographic form of the token (all lower case, capitalized, all
+ caps, numeric, etc)
+\end_layout
+
+\begin_layout Description
+part-of-speech features related
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Relation Extraction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Classification given two entities.
+ Features: (from 
+\begin_inset CommandInset href
+LatexCommand href
+name "“Information Extraction: Capabilities and Challenges”"
+target "http://www.cs.nyu.edu/grishman/tarragona.pdf"
+
+\end_inset
+
+ by Ralph Grishman)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+their heads
+\end_layout
+
+\begin_layout Itemize
+their types (person, organization, ...)
+\end_layout
+
+\begin_layout Itemize
+their the distance in words
+\end_layout
+
+\begin_layout Itemize
+the words in between
+\end_layout
+
+\begin_layout Itemize
+the dependency path between them
+\end_layout
+
+\begin_layout Itemize
+the words on the dependency path
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Output: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+true (there's a given relation) or false
+\end_layout
+
+\begin_layout Itemize
+relation-1 ...
+ relation-n or no-relation (multi-label classification)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generative vs.
+ Discriminative ML
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For ML using statistical methods
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We want the probability (likelihood) of the target given the input features
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we have modeled the joint distribution of input features and target class
+ we can obtain this
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+However, that is not required to model the conditional probability
+\end_layout
+
+\begin_layout Itemize
+Simulation vs.
+ emulation
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generative Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Compute 
+\begin_inset Formula $P(y|x_{1},\ldots,x_{n})$
+\end_inset
+
+ via 
+\begin_inset Formula $P(x_{1},\ldots,x_{n},y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The joint probability enables reversible systems
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Any variable can be made the target class
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Requieres a 
+\begin_inset Quotes eld
+\end_inset
+
+generative story
+\begin_inset Quotes erd
+\end_inset
+
+ of how the data came to be and its inter relations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dependencies between variables
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+More parameters, therefore needs more data and/or make less efficient use
+ of the data
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we only care about the target class, we are modeling too much
+\end_layout
+
+\begin_layout Itemize
+Modeling a predictive keyboard 
+\series bold
+and
+\series default
+ an information extraction system
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Discriminative Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Just model 
+\begin_inset Formula $P(y|x_{1},\ldots,x_{n})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Many times not even model the probability but unnormalized probabilities
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Likelihoods
+\end_layout
+
+\begin_layout Itemize
+Enough to distinguish among different values of the target class
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Better in practice
+\end_layout
+
+\begin_layout Itemize
+Less theoretical advantages
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conditional Random Fields
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+20 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Random Fields
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Conditional Random Fields: Probabilistic Models for Segmenting and Labeling
+ Sequence Data by John Lafferty, Andrew McCallum, Fernando Pereira (ICML
+ 2001)
+\end_layout
+
+\begin_layout Itemize
+Cited by 9083
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nomenclature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+X = observations (e.g., sentences, i.e., a sequence of words)
+\end_layout
+
+\begin_layout Itemize
+Y = labels (e.g., POS)
+\end_layout
+
+\begin_layout Itemize
+Assume a one-to-one correspondance between states and labels
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HMMs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-279-fig2a.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+from Lafferty et al.
+ (2001), Figure 2 (a)
+\end_layout
+
+\begin_layout Itemize
+HMMs and stochastic grammars assigns a joint probability to paired observation
+ and label sequences
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trained to maximize the joint likelihood of the training examples
+\end_layout
+
+\begin_layout Itemize
+Because it isjoint needs to enumerate all observation sequences
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Intractable if observations are complex
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HMMs Tasks: Probability of Observations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The probability of observing a sequence of length 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$L$
+\end_layout
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$Y=y(0), y(1),
+\backslash
+dots,y(L-1)$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+is given by :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$P(Y)=
+\backslash
+sum_{X}P(Y
+\backslash
+mid X)P(X)$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+that sums over all possible hidden-node sequences: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$X=x(0), x(1), 
+\backslash
+dots, x(L-1)$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HMMs Tasks: Most Likely Explanation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Viterbi decoding
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Viterbi_algorithm#/media/File:Viterbi_animated_demo.gif"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Model the probability of labels given the observations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No modeling effort for fixed observations
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Observations can be correlated and refer to different levels of abstraction
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Words and characters, for example
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MEMMs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-279-fig2b.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+from Lafferty et al.
+ (2001), Figure 2 (b)
+\end_layout
+
+\begin_layout Itemize
+Maximum Entropy Markov Models: exponential models at each state trained
+ by iterative scaling Maximum Entropy
+\end_layout
+
+\begin_layout Itemize
+Belong to the general class of 
+\begin_inset Quotes eld
+\end_inset
+
+next state classifiers
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Problem: Label bias
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-279-fig1.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+from Lafferty et al.
+ (2001), Figure 1
+\end_layout
+
+\begin_layout Itemize
+In next state classifiers the Markov assumption can lead to dead ends
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+You shouldn't be in a given state but if you want to estimate what would
+ happen if you are there, there's only one way out and it'll be 
+\begin_inset Quotes eld
+\end_inset
+
+highly likely
+\begin_inset Quotes erd
+\end_inset
+
+ (i.e., misleading)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CRFs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-279-fig2c.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+from Lafferty et al.
+ (2001), Figure 2 (c)
+\end_layout
+
+\begin_layout Itemize
+CRFs have a single exponential model for the joint probability of the sequence
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CRF Graph
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-279-def.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+from Lafferty et al.
+ (2001), Page 3
+\end_layout
+
+\begin_layout Itemize
+Markov property given a graph: only connected nodes in the graph are dependent
+\end_layout
+
+\begin_layout Itemize
+In IE, graph = simple chain
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/factorie/factorie"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Vertex and Edge Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-279-eq1.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+from Lafferty et al.
+ (2001), Eq 1
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Probability at State
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-279-eqM.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+from Lafferty et al.
+ (2001), page 4
+\end_layout
+
+\begin_layout Itemize
+In a chain, the conditional probability is a square matrix the size of the
+ label vocabulary
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Using M to compute p
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-279-eqP.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+from Lafferty et al.
+ (2001), page 4
+\end_layout
+
+\begin_layout Itemize
+Assumes two extra elements, start and stop have been added to the sequence
+\end_layout
+
+\begin_layout Itemize
+The notation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$( )_{i,j}$
+\end_layout
+
+\end_inset
+
+ indicates the entry at position 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$i,j$
+\end_layout
+
+\end_inset
+
+ in a matrix
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Iterative Scaling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Training involves calculating 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+lambda_k$
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mu_k$
+\end_layout
+
+\end_inset
+
+ given the training data
+\end_layout
+
+\begin_layout Itemize
+Iterative scaling transforms this into a weight update problem for suitable
+ deltas:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+lambda_k 
+\backslash
+leftarrow 
+\backslash
+lambda_k + 
+\backslash
+delta
+\backslash
+lambda_k$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mu_k 
+\backslash
+leftarrow 
+\backslash
+mu_k + 
+\backslash
+delta
+\backslash
+mu_k$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+UIMA ML with ClearTk
+\end_layout
+
+\begin_layout Subsection
+ClearTk
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+30 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ClearTk
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClearTK was originally developed by the University of Colorado’s Center
+ for Computational Language and Education Research (CLEAR).
+\end_layout
+
+\begin_layout Itemize
+Most of it is available under a BSD license
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "\"ClearTK 2.0: Design Patterns for Machine Learning in UIMA.\""
+target "http://www.lrec-conf.org/proceedings/lrec2014/pdf/218_Paper.pdf"
+
+\end_inset
+
+ by Bethard, Ogren, and Becker (LREC 2014)
+\end_layout
+
+\begin_layout Itemize
+Requires a contributor agreement
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ClearTk Architecture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Annotations
+\end_layout
+
+\begin_layout Itemize
+Annotators
+\end_layout
+
+\begin_layout Itemize
+ML Engines
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+UIMA Feature vs.
+ ML features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+UIMA Feature: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A particular aspect of an annotation
+\end_layout
+
+\begin_layout Itemize
+Lives in the CAS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+ML Feature:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+An entry in the feature vector
+\end_layout
+
+\begin_layout Itemize
+Used as input to a ML problem (either as train or test data)
+\end_layout
+
+\begin_layout Itemize
+Many times lives in text files in the file system or as arrays in RAM at
+ runtime
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ClearTk Feature Extractors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+target "https://cleartk.github.io/cleartk/docs/tutorial/feature_extraction.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IOB Tagging
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename cleartk.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+from Bethard et al.
+ (2014), Fig.
+ 1
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IOB Tagging (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+target "https://cleartk.github.io/cleartk/docs/tutorial/chunking_classifier.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+End-to-End Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Annotating Training Data with RuTA Workbench
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quick annotation
+\end_layout
+
+\begin_layout Itemize
+Keyboard interface
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ReasonAnnotator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CRF using CleartkSequenceAnnotator
+\end_layout
+
+\begin_layout Itemize
+Features: same as tutorial - POS (+ under amount or under company)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
