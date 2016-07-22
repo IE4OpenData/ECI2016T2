@@ -1,0 +1,2059 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{Warsaw}
+\usecolortheme{wolverine}
+% or ...
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Copyright 2016 by Pablo Duboue <pablo.duboue@gmail.com>.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+All content otherwise stated is licensed under CC-BY-SA.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Hybrid Information Extraction Systems
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ECI2016T2-class5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+Class 5: Hybrid IE Systems
+\end_layout
+
+\begin_layout Author
+Pablo Ariel Duboue, PhD
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+© 2016 Pablo Duboue, licensed under CC-BY-SA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+30va Escuela de Ciencias Informaticas (ECI)
+\begin_inset Newline newline
+\end_inset
+
+Facultad de Cs.
+ Exactas y Naturales UBA
+\end_layout
+
+\begin_layout Section
+Hybrid IE Systems
+\end_layout
+
+\begin_layout Subsection
+Hybrid IE Systems
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why Hybrid IE?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Use the right tool for the job
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Simple NEs: REs
+\end_layout
+
+\begin_layout Itemize
+List-based NEs: dictionaries
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+With suitable filtering
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Pitfall: cascade of errors
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Annotations
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Annotations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This discussion follows 
+\begin_inset CommandInset href
+LatexCommand href
+name "“Natural Language Annotation for Machine Learning”"
+target "https://www.safaribooksonline.com/library/view/natural-language-annotation/9781449332693/"
+
+\end_inset
+
+ by Pustejovsky and Stubbs (2012)
+\end_layout
+
+\begin_layout Itemize
+MATTER Cycle: Model Annotate Train Test Evaluate Revise
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Levels of Annotations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Syntax 
+\end_layout
+
+\begin_layout Itemize
+Semantics 
+\end_layout
+
+\begin_layout Itemize
+Morphology 
+\end_layout
+
+\begin_layout Itemize
+Phonology 
+\end_layout
+
+\begin_layout Itemize
+Phonetics 
+\end_layout
+
+\begin_layout Itemize
+Lexicon 
+\end_layout
+
+\begin_layout Itemize
+Discourse analysis 
+\end_layout
+
+\begin_layout Itemize
+Pragmatics 
+\end_layout
+
+\begin_layout Itemize
+Text structure analysis 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penn Tree Bank Tagset
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-280-fig1.5.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size small
+From Pustejovsky and Stubbs (2012)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Model: a characterization that is more abstract than what is being modeled.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The tagset of spec
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+With a model, annotation guidelines can be written
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Guidelines
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consuming vs non-consuming tags
+\end_layout
+
+\begin_layout Itemize
+Interannotator agreement, span size.
+ 
+\end_layout
+
+\begin_layout Itemize
+Kappa statistic.
+ 
+\end_layout
+
+\begin_layout Itemize
+Good agreement means good instructions not good annotations! 
+\end_layout
+
+\begin_layout Itemize
+Adjudication for gold standard
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Interannotator Agreement 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+\begin_inset Quotes eld
+\end_inset
+
+Inter-Coder Agreement for Computational Linguistics
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+ by Artstein & Poesio (2008)
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+http://aclweb.org/anthology/J/J08/J08-4004.pdf
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\emph on
+\begin_inset Quotes eld
+\end_inset
+
+Assessing Agreement on Classification Tasks: The Kappa Statistic
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+ by Carletta (1996)
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+http://aclweb.org/anthology-new/J/J96/J96-2004.pdf
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\kappa=\dfrac{P(A)-P(E)}{1-P(E)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $P(A)$
+\end_inset
+
+ is the observed agreement and 
+\begin_inset Formula $P(E)$
+\end_inset
+
+ is the expected chance agreement for annotators choosing each category
+ the same number of times as they originally did, but choosing each item
+ randomly.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cohen's Kappa Example
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+From http://en.wikipedia.org/wiki/Cohen%27s_kappa
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B yes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B no
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A yes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A no
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P(A)=\nicefrac{(20+15)}{50}=0.7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P(E)=P(E,yes)+P(E,no)$
+\end_inset
+
+, A says yes 50% and B says yes 60%, therefore 
+\begin_inset Formula $P(E,yes)=0.5\times0.6=0.3$
+\end_inset
+
+ and 
+\begin_inset Formula $P(E,no)=0.5\times0.4=0.2$
+\end_inset
+
+ and thus 
+\begin_inset Formula $P(E)=0.3+0.2=0.5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\kappa=\frac{0.7-0.5}{1-0.5}=0.4
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+More Than Two Annotators
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Move from a contingency table to an agreement table
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For each annotated item, how many categories it got (from any annotator)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The generalization of 
+\begin_inset Formula $P(E)$
+\end_inset
+
+ for multiple annotators involves computing pairwise agreements.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The pairwise average of 2-annotator 
+\begin_inset Formula $P(E)$
+\end_inset
+
+, to be more precise.
+ 
+\end_layout
+
+\begin_layout Itemize
+See the extended version of Artstein & Poesio (2008) for the exact formula
+ 
+\end_layout
+
+\begin_layout Itemize
+For a python implementation: 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+http://nltk.org/_modules/nltk/metrics/agreement.html#AnnotationTask.multi_kappa
+\family default
+\size default
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Understanding Kappa Values
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename kappa.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+(from Artstein & Poesio, 2008)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statement of Purpose
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Write a statement of purpose (one sentence or so) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+then expand it with "hows" 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The basic statement should answer: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What's the intended use of the annotation 
+\end_layout
+
+\begin_layout Itemize
+What's its overall outcome 
+\end_layout
+
+\begin_layout Itemize
+Where the documents come from 
+\end_layout
+
+\begin_layout Itemize
+What level is being annotated
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Refinements
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Informativity (useful annotations) vs correctness (things that can be annotated)
+\end_layout
+
+\begin_layout Itemize
+/TO
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Scope of the Annotation Task
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Granularity of tags
+\end_layout
+
+\begin_layout Itemize
+Single sentence vs.
+ multisentence vs multidocument
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Scope of the Corpus
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Written material vs transcripts
+\end_layout
+
+\begin_layout Itemize
+Professional prose vs amateur
+\end_layout
+
+\begin_layout Itemize
+Background research: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+LDC, ELRA, conferences, challenges
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Assembling the dataset: choosing it, getting permissions for re-distribution.
+ Eliciting data.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Annotating
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Deciding what to tell the annotators about metadata (avoiding bias)
+\end_layout
+
+\begin_layout Itemize
+Pre-processing vs clean slate: asking to correct errors plus annotating
+ tend to be overlooked.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Better to do in two separate tasks.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How much to annotate? 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sample the corpus so all phenomena are represented 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How the annotators will do their work.
+ What annotation will look like? Different tasks require different representatio
+ns? annotation exchange format / annotation environment vs machine learning
+ need
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the annotation set-up is error prone, errors will creep on top of the
+ annotation errors.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Inline vs.
+ token standoffs vs.
+ character standoffs annotations.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+End-to-End Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+20 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Full System
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+SimpleFrenchSentenceAndToken (java.text.BreakIterator)
+\end_layout
+
+\begin_layout Itemize
+AmountAnnotator (concept)
+\end_layout
+
+\begin_layout Itemize
+NeqConceptAnnotator (ConceptMapper)
+\end_layout
+
+\begin_layout Itemize
+CompanyAnnotator (OpenNLP)
+\end_layout
+
+\begin_layout Itemize
+Combination of companies (custom)
+\end_layout
+
+\begin_layout Itemize
+Reason (RuTA)
+\end_layout
+
+\begin_layout Itemize
+ReasonAnnotator (CRF/ClearTk/Mallet)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Changes to annotate a different NE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Add type
+\end_layout
+
+\begin_layout Itemize
+Annotate
+\end_layout
+
+\begin_layout Itemize
+Train model
+\end_layout
+
+\begin_layout Itemize
+Set up descriptor
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Full Cycle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Step 1:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Baseline system (RuTA + Amount RE + NEQ) on first 36 documents
+\end_layout
+
+\begin_layout Itemize
+Generate CASes on 36
+\end_layout
+
+\begin_layout Itemize
+Annotate on 32 / evaluate on 32
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Step 2:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Train Company OpenNLP on 36
+\end_layout
+
+\begin_layout Itemize
+Train Reason CRF on 36
+\end_layout
+
+\begin_layout Itemize
+Filter NEQ dictionary of spurious matches
+\end_layout
+
+\begin_layout Itemize
+Generate CASes on 32
+\end_layout
+
+\begin_layout Itemize
+Annotate on 32 / evaluate on 32
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Full Cycle (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Step 3:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Train Company OpenNLP on 36+32
+\end_layout
+
+\begin_layout Itemize
+Train Reason CRF on 36+32
+\end_layout
+
+\begin_layout Itemize
+Filter NEQ dictionary of spurious matches
+\end_layout
+
+\begin_layout Itemize
+Generate CASes on new 32
+\end_layout
+
+\begin_layout Itemize
+Annotate on new 32 / evaluate on new 32
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Deployment
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Robust
+\end_layout
+
+\begin_layout Itemize
+Long term execution
+\end_layout
+
+\begin_layout Itemize
+Memory requirements
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maintenance
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Language drift
+\end_layout
+
+\begin_layout Itemize
+Clustering to maintain NE models
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Using the Extracted Data
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+10 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statistical Inference
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "“Network properties of genes harboring inherited disease mutations”"
+target "http://www.pnas.org/content/105/11/4323.long"
+
+\end_inset
+
+ by Feldman, Rzhetsky, Vitkup (PNAS 2008)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename F6.large.jpg
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Natural Language Generation
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename input.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Natural Language Generation (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename output.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Other Applications
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "PLN FaMAF work with documents from dirty war"
+target "http://www.lavoz.com.ar/ciudadanos/software-cordobes-para-procesar-documentos-de-la-dictadura"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename lavoz.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Research Topics
+\end_layout
+
+\begin_layout Subsection
+Research Topics
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+50 slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Research topics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Multilingual
+\end_layout
+
+\begin_layout Itemize
+Multi-document
+\end_layout
+
+\begin_layout Itemize
+Open Domain
+\end_layout
+
+\begin_layout Itemize
+Deep Learning (character-based) 
+\end_layout
+
+\begin_layout Itemize
+Unsupervised
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+People and Groups
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ralph Grishman and NYU
+\end_layout
+
+\begin_layout Itemize
+Heng Ji and RPI
+\end_layout
+
+\begin_layout Itemize
+Oren Etzioni and UWash
+\end_layout
+
+\begin_layout Itemize
+Ralph Weischedel and BBN
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Heng Ji Presentation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "\"Information Extraction: Techniques, Advances and Challenges \". Invited Lecture at NAACL Summer School, June 2012."
+target "http://nlp.cs.rpi.edu/paper/IE_2012.pdf"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Open IE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paper-281
+\end_layout
+
+\end_inset
+
+
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "\"Open information extraction to KBP relations in 3 hours\""
+target "http://www.nist.gov/tac/publications/2013/participant.papers/UWashington.TAC2013.proceedings.pdf"
+
+\end_inset
+
+
+\emph default
+ by Soderland et al.
+ (Text Analysis Conference.
+ 2013)
+\end_layout
+
+\begin_layout Itemize
+Customizing a general, Open IE System to KBP in 12hs writing mapping 
+\series bold
+rules
+\series default
+ 
+\end_layout
+
+\begin_layout Itemize
+Extractor 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3hs prec 0.79
+\end_layout
+
+\begin_layout Itemize
+12 prec 0.80
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Great example of a hybrid system
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Open IE (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Open IE expresses the relations textually so multiple "relations" have to
+ be mapped to the actual, ontological relation
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-281-fig1.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size small
+From Soderland et al.
+ (2013), Fig.
+ 1
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/knowitall/openie"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Open IE (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Zipf says: map the top forms, forget the rest
+\end_layout
+
+\begin_layout Itemize
+Limited training is not enough to learn quality rules, even with active
+ learning (Soderland et al., 2010) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+More enfasis to rules
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sample rule:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-281-fig3.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size small
+From Soderland et al.
+ (2013), Fig.
+ 3
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Architecture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-281-fig4.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size small
+From Soderland et al.
+ (2013), Fig.
+ 4
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Performance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+12hs: 16 rules per relation (5x the 3h set)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Only 35% increase in recall
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename paper-281-fig5.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size small
+From Soderland et al.
+ (2013), Fig.
+ 5
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Error Analysis (precision)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+31% seem correct to them
+\end_layout
+
+\begin_layout Itemize
+23% rules overgeneralized
+\end_layout
+
+\begin_layout Itemize
+19% rules matched a non-head term
+\end_layout
+
+\begin_layout Itemize
+15% errors in the Open IE extractor
+\end_layout
+
+\begin_layout Itemize
+12% correference errors
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Error Analysis (recall)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Evaluated on a random sample of sentences
+\end_layout
+
+\begin_layout Itemize
+42% the information was there, a rule was lacking
+\end_layout
+
+\begin_layout Itemize
+16% the extractor truncated arguments
+\end_layout
+
+\begin_layout Itemize
+10% Open IE fails to identify a noun-noun relation
+\end_layout
+
+\begin_layout Itemize
+10% problems due to syntactic complexity
+\end_layout
+
+\begin_layout Itemize
+22% other
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Character-based Deep Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "“Deep Learning for Character-based Information Extraction”"
+target "http://www.cs.cmu.edu/~qyj/zhSenna/2014_ecir2014_full.pdf"
+
+\end_inset
+
+by Yanjun Qi et al.
+ (ECIR 2014)
+\end_layout
+
+\begin_layout Itemize
+1.3M Chinese NER
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
