@@ -1630,6 +1630,16 @@ Heng Ji Presentation
 
 \begin_deeper
 \begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Paper-283 
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset href
 LatexCommand href
 name "\"Information Extraction: Techniques, Advances and Challenges \". Invited Lecture at NAACL Summer School, June 2012."
@@ -2039,6 +2049,16 @@ Character-based Deep Learning
 
 \begin_deeper
 \begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paper-298
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset href
 LatexCommand href
 name "“Deep Learning for Character-based Information Extraction”"

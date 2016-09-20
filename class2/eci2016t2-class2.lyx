@@ -6,7 +6,8 @@
 \origin unavailable
 \textclass beamer
 \begin_preamble
-\usetheme{Warsaw}
+\usepackage{listings}
+\usetheme{Malmoe}
 \usecolortheme{wolverine}
 % or ...
 
