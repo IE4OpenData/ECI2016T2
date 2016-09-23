@@ -322,6 +322,21 @@ textrm{organization}}$
  .
 \end_layout
 
+\begin_layout Standard
+\align right
+
+\size footnotesize
+from 
+\begin_inset CommandInset href
+LatexCommand href
+name "Grishman (2012)"
+target "http://www.cs.nyu.edu/grishman/tarragona.pdf"
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -1714,7 +1729,22 @@ Linear Regression
 \align center
 \begin_inset Graphics
 	filename Linear_regression.png
-	scale 50
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+from 
+\begin_inset CommandInset href
+LatexCommand href
+name "Wikipedia"
+target "https://en.wikipedia.org/wiki/File:Linear_regression.svg"
 
 \end_inset
 
@@ -1829,7 +1859,22 @@ Logistic Function
 \align center
 \begin_inset Graphics
 	filename Logistic-curve.png
-	scale 25
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size footnotesize
+from 
+\begin_inset CommandInset href
+LatexCommand href
+name "Wikipedia"
+target "https://commons.wikimedia.org/wiki/File:Logistic-curve.svg"
 
 \end_inset
 
@@ -2279,8 +2324,8 @@ CE
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
-need annotated corpus for evaluation, otherwise more rules hurt performance
+\begin_layout Itemize
+Need annotated corpus for evaluation, otherwise more rules hurt performance
 \end_layout
 
 \end_deeper
@@ -3549,7 +3594,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-Entity Linking in the End-to-End Case Study
+NER in the End-to-End Case Study
 \end_layout
 
 \end_inset
@@ -3565,10 +3610,181 @@ Continuing with the Octroy Pipeline, we will analyze code in branch class2
 
 \begin_deeper
 \begin_layout Itemize
-https://github.com/IE4OpenData/Octroy
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/IE4OpenData/Octroy"
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+Dependency management and build cycle is usually managed with the Apache
+ Maven tool:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+mvn clean
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+mvn compile
+\end_layout
+
+\begin_layout Itemize
+mvn test
+\end_layout
+
+\begin_layout Itemize
+mvn appassembler:assemble
+\end_layout
+
+\begin_layout Itemize
+pom.xml (Project Object Model)
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Running the Pipeline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+./target/appassembler/bin/run-pipeline-tsv or run-pipeline-xmi
+\end_layout
+
+\begin_layout Itemize
+Focus on Company annotations
+\end_layout
+
+\begin_layout Itemize
+OpenNLP pipeline:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+./target/appassembler/bin/run-pipeline-xmi org/ie4opendata/octroy/OctroyEngineOpe
+nNLP.xml ./docs/dev32 /tmp/dev32/
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+ConceptMapper pipeline:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+./target/appassembler/bin/run-pipeline-xmi org/ie4opendata/octroy/OctroyEngineCM.x
+ml ./docs/dev32 /tmp/dev32
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluating the Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/IE4OpenData/ruta_testing_standalone"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+mvn package appassembler:assemble
+\end_layout
+
+\begin_layout Itemize
+./target/appassembler/bin/ruta-evaluate
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Evaluating XMI annotated with different pipelines (output on /tmp/dev32)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\tiny\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ /path/to/ruta_testing_standalone/target/appassembler/bin/ruta-evaluate
+ 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      --gold data/gold32 --eval /tmp/dev32 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      --include org.ie4opendata.octroy.Company 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      --typesystem ./src/main/resources/org/ie4opendata/octroy/octroy_eval_ts.xml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak

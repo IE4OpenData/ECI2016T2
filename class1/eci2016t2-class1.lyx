@@ -9272,6 +9272,131 @@ Overall
 
 \end_layout
 
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Baseline Evaluation (cont.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/IE4OpenData/ruta_testing_standalone"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+mvn package appassembler:assemble
+\end_layout
+
+\begin_layout Itemize
+./target/appassembler/bin/ruta-evaluate
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Baseline.md"
+target "https://github.com/IE4OpenData/Octroy/blob/class2/Baseline.md"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\tiny\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ for t in Amount Company Reason; 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  do for s in 36 32; 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    do echo $t $s; 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /path/to/ruta_testing_standalone/target/appassembler/bin/ruta-evaluate
+ 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      --gold data/gold$s --eval data/baseline$s 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      --include org.ie4opendata.octroy.$t 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      --typesystem ./src/main/resources/org/ie4opendata/octroy/octroy_eval_ts.xml;
+ 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    done;
+\end_layout
+
+\begin_layout Plain Layout
+
+   done
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 The Rest of this Course
 \end_layout
