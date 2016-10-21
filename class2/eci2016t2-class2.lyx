@@ -4439,254 +4439,110 @@ Generate Training File
 
 \begin_deeper
 \begin_layout Itemize
-OpenNLP has a standalone Annotate the named entities
+OpenNLP has a standalone model generating capabilities, based on 
+\begin_inset Quotes eld
+\end_inset
+
+semi-structured text files
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This approach encodes tokens as white-space separated terms
 \end_layout
 
 \begin_layout Itemize
-Train a Maximum Entity model
+And sentences as full lines
 \end_layout
 
 \begin_layout Itemize
-opennlp.tools.namefind.NameFinderME
+NER tokens are marked with pseudo SGML tags as 
+\family typewriter
+\size scriptsize
+<START:person> <END>
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+This format clearly does not uses stand-off annotation but we will look
+ into it to build up towards using ClearTk
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Annotating training data with this format will render the annotations useless
+ if the tokenizer / sentence boundary detector is changed!
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+You can generate the training file (empty file, the annotations have to
+ be added by hand using a text editor) using
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+\size scriptsize
+./target/appassembler/bin/opennlp-trainer-extractor <folder with txt files>
+ <output file>
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+An annotated file is in data/company.training36
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note the sentence boundaries are very poor
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Standard
-
-\series bold
-\size footnotesize
-private
-\series default
- 
-\series bold
-static
-\series default
- AdaptiveFeatureGenerator createFeatureGenerator() { 
-\begin_inset Newline newline
+\begin_inset Separator parbreak
 \end_inset
 
 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\series bold
-return
-\series default
- 
-\series bold
-new
-\series default
- CachedFeatureGenerator( 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\series bold
-new
-\series default
- AdaptiveFeatureGenerator[]{ 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\series bold
-new
-\series default
- WindowFeatureGenerator(
-\series bold
-new
-\series default
- TokenFeatureGenerator(), 2, 2), 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\series bold
-new
-\series default
- WindowFeatureGenerator(
-\series bold
-new
-\series default
- TokenClassFeatureGenerator(
-\series bold
-true
-\series default
-), 2, 2), 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\series bold
-new
-\series default
- OutcomePriorFeatureGenerator(), 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\series bold
-new
-\series default
- PreviousMapFeatureGenerator(), 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\series bold
-new
-\series default
- BigramNameFeatureGenerator(), 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\series bold
-new
-\series default
- SentenceFeatureGenerator(
-\series bold
-true
-\series default
-, 
-\series bold
-false
-\series default
-) 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-}); 
-\begin_inset Newline newline
-\end_inset
-
-}
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Available Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trained MEMM models for multiple tasks (NER but also tokenization and sentence
+ boundary detection) are made available by the OpenNLP project only at
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "http://opennlp.sourceforge.net/models-1.5/"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
