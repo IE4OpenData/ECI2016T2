@@ -1774,6 +1774,18 @@ RuTA at Length
 Slides from GSCL 2013 by Peter Klügl
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "https://uima.apache.org/downloads/gscl2013/2013-GSCL-Ruta.pdf"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
