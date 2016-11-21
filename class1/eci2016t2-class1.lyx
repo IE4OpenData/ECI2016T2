@@ -884,65 +884,6 @@ It is hard to build intuitions on the topic
 status open
 
 \begin_layout Plain Layout
-Hybrid IE
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-You will encounter plenty of research on doing IE using only ML
-\end_layout
-
-\begin_layout Itemize
-This makes sense on a research level
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Solving a problem by programming does not get a paper published
-\end_layout
-
-\begin_layout Itemize
-Unless you are publishing to the community that had that problem (i.e., biology
- if doing IE on biology texts)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-However:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Quality annotations are also expensive
-\end_layout
-
-\begin_layout Itemize
-Combining rules and machine learning is more an art than a science
-\end_layout
-
-\begin_layout Itemize
-It is hard to build intuitions on the topic
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
 The First Step Goes The Longer
 \end_layout
 
